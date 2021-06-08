@@ -1,9 +1,9 @@
 # 2021_Android
 Learning about Android Studio
 
-교재 : Do it! 안드로이드 앱 프로그래밍
-글쓴이 : 정재곤
-출판사 : 이지스퍼블리싱
+교재 : Do it! 안드로이드 앱 프로그래밍   
+글쓴이 : 정재곤   
+출판사 : 이지스퍼블리싱   
 
 <img src="https://user-images.githubusercontent.com/84966961/121149625-c9615b00-c87d-11eb-929f-77af2ae3edc0.jpg" width="40%">
 
