@@ -9,7 +9,9 @@ Android Studio 설치 방법은 생락!
 
 <img src="https://user-images.githubusercontent.com/84966961/121198414-13156a00-c8ad-11eb-86cd-ecaab7203c56.jpg">
  Android Studio를 실행한 후 프로젝트를 만들면 다음과 같은 화면이 보이게 된다.   
- 초기화면에는 MainActivity.java 파일이 실행되어있고, app 실행시 보이게 할 초기 화면을 구성하는 코드가 작성되어 있다.
+ 초기화면에는 MainActivity.java 파일이 실행되어있고, app 실행시 보이게 할 초기 화면을 구성하는 코드가 작성되어 있다.   
+    
+    왼쪽 패널에는 res(resource) 폴더가 보이며 내부에는 drawable(image폴더), layout(app화면 XML폴더), mipmap, values 등의 폴더가 들어있다.
  
  ```java
  public class MainActivity extends AppCompatActivity {
@@ -132,8 +134,10 @@ Android Emulator를 설치하려면 SDK Manager의 SDK Tools 탭에서 Android E
 	wrap_content : 컨텐츠의 크기에 맞게 씌워라.
 
 <hr/>
- ### 94p : 레이아웃 기초 익히기
 
+  ### 94p : 레이아웃 기초 익히기
+
+   
   **제약조건**
   뷰가 레이아웃 안의 다른 요소와 어떻게 연결되는지 알려주는 것으로, 뷰의 연결점(Anchor Point)와 대상(Target)을 연결한다.
   
@@ -153,8 +157,8 @@ Android Emulator를 설치하려면 SDK Manager의 SDK Tools 탭에서 Android E
 
 4. 디자인 미리보기 화면 위의 탭에서 가이드라인을 통해
 레이아웃 이외에도 기준점을 잡을 수 있도록 가이드라인을 설치할 수 있다. 
+<img src = "https://user-images.githubusercontent.com/84966961/121218379-a5256e80-c8bd-11eb-92b0-fb5ed7a55615.png" width="40%"> <img src = "https://user-images.githubusercontent.com/84966961/121218702-ef0e5480-c8bd-11eb-9947-434bc1979ed7.png" width="40%">
 
-![image](https://user-images.githubusercontent.com/84966961/121218379-a5256e80-c8bd-11eb-92b0-fb5ed7a55615.png){: width="20%" height="20%"} ![image](https://user-images.githubusercontent.com/84966961/121218702-ef0e5480-c8bd-11eb-9947-434bc1979ed7.png){: width="50%" height="50%"}
 
 아래 코드는 가이드 라인의 코드이며 코드 내부에는 가이드 라인의 방향 코드가 들어있다.
 
