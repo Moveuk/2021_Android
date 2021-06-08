@@ -47,7 +47,8 @@ Android Emulator를 설치하려면 SDK Manager의 SDK Tools 탭에서 Android E
  ![image](https://user-images.githubusercontent.com/84966961/121210313-8a9bc700-c8b6-11eb-9351-7b4ec314d625.png)
  
    <hr/>
-### 52p : 여러 버튼 추가
+   
+   ### 52p : 여러 버튼 추가
 
 ![image](https://user-images.githubusercontent.com/84966961/121211087-2af1eb80-c8b7-11eb-84b9-1edcce45b393.png)
 
@@ -75,12 +76,14 @@ Android Emulator를 설치하려면 SDK Manager의 SDK Tools 탭에서 Android E
   Intent를 통하여 네이버 사이트 접속, 전화 걸기 등이 가능해진다.
   
   <hr/>
-### 60p : 실제 단말기를 통한 테스트.
+  
+  ### 60p : 실제 단말기를 통한 테스트.
 
    생략.
    
   <hr/>
-### 86p : 뷰와 뷰의 크기 속성 이해하기
+  
+  ### 86p : 뷰와 뷰의 크기 속성 이해하기
 
   뷰(View)는 일반적으로 컨트롤이나 위젯으로 불리는 UI 구성요소이다.
   즉, 사용자 눈에 보이는 화면의 구성 요소들이 바로 뷰이다.
@@ -90,7 +93,13 @@ graph LR
 A(뷰(view)) <-- 상속 -- C(뷰그룹(ViewGroup))
 A(뷰(view)) <-- 포함 -- C(뷰그룹(ViewGroup))
 ```
-
+```mermaid
+graph LR
+A[Square Rect] -- Link text --> B((Circle))
+A --> C(Round Rect)
+B --> D{Rhombus}
+C --> D
+```
 
 ```xml
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
