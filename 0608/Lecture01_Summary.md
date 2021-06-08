@@ -102,7 +102,7 @@ Android Emulator를 설치하려면 SDK Manager의 SDK Tools 탭에서 Android E
   뷰(View)는 일반적으로 컨트롤이나 위젯으로 불리는 UI 구성요소이다.
   즉, 사용자 눈에 보이는 화면의 구성 요소들이 바로 뷰이다.
 
-![image](https://user-images.githubusercontent.com/84966961/121216007-7908ee00-c8bb-11eb-9a94-120801aa2610.png) <img src = "https://user-images.githubusercontent.com/84966961/121216045-7efecf00-c8bb-11eb-92d4-2f0cef8cca0a.png" width="60%">
+![image](https://user-images.githubusercontent.com/84966961/121216007-7908ee00-c8bb-11eb-9a94-120801aa2610.png) <img src = "https://user-images.githubusercontent.com/84966961/121216045-7efecf00-c8bb-11eb-92d4-2f0cef8cca0a.png" width="30%">
 
 화면의 구성 요소 : 뷰
 사용자 눈에 보이는 컨트롤 역할을 하는 뷰 : 위젯
