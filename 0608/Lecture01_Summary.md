@@ -102,7 +102,7 @@ Android Emulator를 설치하려면 SDK Manager의 SDK Tools 탭에서 Android E
   뷰(View)는 일반적으로 컨트롤이나 위젯으로 불리는 UI 구성요소이다.
   즉, 사용자 눈에 보이는 화면의 구성 요소들이 바로 뷰이다.
 
-![image](https://user-images.githubusercontent.com/84966961/121216007-7908ee00-c8bb-11eb-9a94-120801aa2610.png) ![image](https://user-images.githubusercontent.com/84966961/121216045-7efecf00-c8bb-11eb-92d4-2f0cef8cca0a.png)
+![image](https://user-images.githubusercontent.com/84966961/121216007-7908ee00-c8bb-11eb-9a94-120801aa2610.png) <img src = "https://user-images.githubusercontent.com/84966961/121216045-7efecf00-c8bb-11eb-92d4-2f0cef8cca0a.png" width="150%">
 
 화면의 구성 요소 : 뷰
 사용자 눈에 보이는 컨트롤 역할을 하는 뷰 : 위젯
@@ -157,7 +157,7 @@ Android Emulator를 설치하려면 SDK Manager의 SDK Tools 탭에서 Android E
 
 4. 디자인 미리보기 화면 위의 탭에서 가이드라인을 통해
 레이아웃 이외에도 기준점을 잡을 수 있도록 가이드라인을 설치할 수 있다. 
-<img src = "https://user-images.githubusercontent.com/84966961/121218379-a5256e80-c8bd-11eb-92b0-fb5ed7a55615.png" width="40%"> <img src = "https://user-images.githubusercontent.com/84966961/121218702-ef0e5480-c8bd-11eb-9947-434bc1979ed7.png" width="40%">
+<img src = "https://user-images.githubusercontent.com/84966961/121218379-a5256e80-c8bd-11eb-92b0-fb5ed7a55615.png" width="50%"> <img src = "https://user-images.githubusercontent.com/84966961/121218702-ef0e5480-c8bd-11eb-9947-434bc1979ed7.png" width="40%">
 
 
 아래 코드는 가이드 라인의 코드이며 코드 내부에는 가이드 라인의 방향 코드가 들어있다.
