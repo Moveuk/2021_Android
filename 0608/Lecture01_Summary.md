@@ -52,9 +52,21 @@ Android Emulator를 설치하려면 SDK Manager의 SDK Tools 탭에서 Android E
 
 ![image](https://user-images.githubusercontent.com/84966961/121211087-2af1eb80-c8b7-11eb-84b9-1edcce45b393.png)
 
- Palette 패널을 통해 다음과 같은 BUTTON을 추가할 수 있다. 또한 오른쪽 Attribute(속성) 패널에서 다양한 값들을 조절할 수 있다. 
+ **Palette**
+ 
+ Palette 패널을 통해 다음과 같은 BUTTON을 추가할 수 있다. 또한 오른쪽 Attribute(속성) 패널에서 다양한 값들을 조절할 수 있다.    
    
  onClick 기능을 활성화 하기 위해 onButton1Clicked 이라는 메소드 이름을 넣어준다.
+ 
+ 
+**Component Tree**
+ 왼쪽에는 Componet Tree 패널이 존재한다.
+ 눈에 보이지는 않지만 이 화면에 어떤 뷰들이 어떤 계층 구조로 만들어져있는지 모여주는것.   
+   
+      
+         
+
+**onClick 기능 활성화**	
 
  그 다음 MainActivity.java 파일에서 다음과 같은 코드를 추가하면, 네이버로 이동하는 링크 버튼을 활성화 할 수 있다.   
  
@@ -88,18 +100,14 @@ Android Emulator를 설치하려면 SDK Manager의 SDK Tools 탭에서 Android E
   뷰(View)는 일반적으로 컨트롤이나 위젯으로 불리는 UI 구성요소이다.
   즉, 사용자 눈에 보이는 화면의 구성 요소들이 바로 뷰이다.
 
-```mermaid
-graph LR
-A(뷰(view)) <-- 상속 -- C(뷰그룹(ViewGroup))
-A(뷰(view)) <-- 포함 -- C(뷰그룹(ViewGroup))
-```
-```mermaid
-graph LR
-A[Square Rect] -- Link text --> B((Circle))
-A --> C(Round Rect)
-B --> D{Rhombus}
-C --> D
-```
+![image](https://user-images.githubusercontent.com/84966961/121216007-7908ee00-c8bb-11eb-9a94-120801aa2610.png) ![image](https://user-images.githubusercontent.com/84966961/121216045-7efecf00-c8bb-11eb-92d4-2f0cef8cca0a.png)
+
+화면의 구성 요소 : 뷰
+사용자 눈에 보이는 컨트롤 역할을 하는 뷰 : 위젯
+
+뷰를 담고 있는 그릇 : 뷰그룹
+뷰그룹 안의 뷰를 배치하는 것 : 레이아웃
+
 
 ```xml
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -111,27 +119,44 @@ C --> D
     tools:context=".MainActivity">
 ```
 
-Component Tree
- 눈에 보이지는 않지만 이 화면에 어떤 뷰들이 어떤 계층 구조로 만들어져있는지 모여주는것.
-
+ 위의 코드는 레이아웃의 기본 코드이다.
+ 
+ 뷰는 반드시 위의 코드처럼 layout_width와 layout_height라는 필수 속성을 지정해 줘야한다.
 
     android:layout_height="match_parent"
 
-match_parent : 창을 부모창에 맞춰서 보여줘라.
+ 다음과 같은 크기 속성 종류가 존재한다.   
+ 
+	match_parent : 창을 부모창에 맞춰서 보여줘라.
 
-wrap_content : 컨텐츠의 크기에 맞게 씌워라.
+	wrap_content : 컨텐츠의 크기에 맞게 씌워라.
 
-94p
+<hr/>
+ ### 94p : 레이아웃 기초 익히기
+
+  **제약조건**
+  뷰가 레이아웃 안의 다른 요소와 어떻게 연결되는지 알려주는 것으로, 뷰의 연결점(Anchor Point)와 대상(Target)을 연결한다.
+  
+  뷰에는 핸들(Side Constraint Handle)이라 불리는 동그라미 모양의 버튼이 존재한다.
 
 1. 버튼의 제약 조건을 성립하도록 기준점을 잡아준다.
 
 2. 뷰의 위치 설정 magnet 표시 on/off
 	-> 절대 위치, 상대 위치 설정 가능.
 
-3. 뷰 미리보기 화면에서 <<, 지그재그, fixed 표시로 크기를 설정할 수 있다.
+![image](https://user-images.githubusercontent.com/84966961/121217815-29c3bd00-c8bd-11eb-9377-8f768c511d54.png)
+
+3. 뷰 미리보기 화면에서 <<(wrap_content : 내용에 맞춤), 지그재그(기준점까지 늘림), fixed 표시로 크기를 설정할 수 있다.
+
+![image](https://user-images.githubusercontent.com/84966961/121218057-5d9ee280-c8bd-11eb-8a1f-669bf136a963.png)
+
 
 4. 디자인 미리보기 화면 위의 탭에서 가이드라인을 통해
 레이아웃 이외에도 기준점을 잡을 수 있도록 가이드라인을 설치할 수 있다. 
+
+![image](https://user-images.githubusercontent.com/84966961/121218379-a5256e80-c8bd-11eb-92b0-fb5ed7a55615.png){: width="20%" height="20%"} ![image](https://user-images.githubusercontent.com/84966961/121218702-ef0e5480-c8bd-11eb-9947-434bc1979ed7.png){: width="50%" height="50%"}
+
+아래 코드는 가이드 라인의 코드이며 코드 내부에는 가이드 라인의 방향 코드가 들어있다.
 
 ```
   --   <androidx.constraintlayout.widget.Guideline
@@ -143,7 +168,7 @@ wrap_content : 컨텐츠의 크기에 맞게 씌워라.
         app:layout_constraintGuide_begin="161dp" />
 ```
 
-5. 기준점을 어디로 잡았는지 코드에 나와있음.
+5. 뷰 코드에는 기준점을 어디로 잡았는지 어디로 붙였는지(Anchor) 코드에 나와있다.
 ```
     <Button
         android:id="@+id/button3"
