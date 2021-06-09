@@ -270,7 +270,8 @@ public class LayoutCodeActivity extends AppCompatActivity {
  <hr/>
  
  
- **상대 레이아웃에서 부모 커네이너와의 상대적 위치를 이용하는 속성**
+ **상대 레이아웃에서 부모 커네이너와의 상대적 위치를 이용하는 속성**   
+ 
  <img src = "https://user-images.githubusercontent.com/84966961/121315887-badd7700-c943-11eb-9774-4f848841491a.png" width="50%">
 ```
 layout_alignParentTop    : 부모 컨테이너의 위쪽과 뷰의 위쪽을 맞춤
@@ -292,8 +293,9 @@ layout_centerlnParent    : 부모 컨테이너의 수평과 수지 방향 중앙
  이미지 출처 : http://jwandroid.tistory.com/m/post/158
     
   <hr/>    
- **상대 레이아웃에서 다른 뷰와의 상대적 위치를 이용하는 속성**
+ **상대 레이아웃에서 다른 뷰와의 상대적 위치를 이용하는 속성**   
     
+       
 <img src = "https://user-images.githubusercontent.com/84966961/121316029-dc3e6300-c943-11eb-9f1f-89274e4df799.png" width="50%">
 ```
 layout_above         : 지정한 뷰의 위쪽에 배치함
