@@ -288,13 +288,11 @@ layout_centerVertical    : 부모 컨테이너의 수직 방향 중앙에 배치
 
 layout_centerlnParent    : 부모 컨테이너의 수평과 수지 방향 중앙에 배치함
 ``` 
-       
 이미지 출처 : http://jwandroid.tistory.com/m/post/158
     
-    
-  <hr/>  
-        
-        
+     
+<hr/>
+         
  **상대 레이아웃에서 다른 뷰와의 상대적 위치를 이용하는 속성**   
      
        
@@ -320,5 +318,4 @@ layout_alignRight    : 지정한 뷰의 오른쪽과 맞춤
 layout_alignBaseLine : 지정한 뷰의 내용물의 아래쪽 기준선(baseline)을 맞춤 
 ```
 이미지 출처 : http://jwandroid.tistory.com/m/post/158
- 
  <hr/>
