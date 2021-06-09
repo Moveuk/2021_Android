@@ -8,5 +8,6 @@ Learning about Android Studio
 <img src="https://user-images.githubusercontent.com/84966961/121149625-c9615b00-c87d-11eb-929f-77af2ae3edc0.jpg" width="40%">
 
 ## < 목차 >
-1. 20210608 : 안드로이드 스튜디오 설치 및 AVM 설치, 프로젝트 생성.
+1. 20210607 : 안드로이드 스튜디오 설치 및 AVM 설치, 프로젝트 생성.
 2. 20210608 : 안드로이드 스튜디오 화면 설명(코드창, 디자인창, 블루프린트, 등), 뷰의 개념, 레이아웃의 개념, 제약 조건과 레이아웃 
+3. 20210609 : 레이아웃의 종류, 리니어 레이아웃, 상대 레이아웃, 뷰 정렬 속성(gravity, align, ...), margin, padding, weight, ...
