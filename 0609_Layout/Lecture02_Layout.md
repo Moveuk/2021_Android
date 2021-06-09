@@ -1,6 +1,6 @@
 # Layout
 <hr/>
-<img src = "" width="50%">
+   
 ### 114p : 02 레이아웃 익히기.
 
  #### 02-1 안드로이드에 포함된 대표적인 레이아웃 살펴보기.
@@ -30,11 +30,12 @@
 
  ![image](https://user-images.githubusercontent.com/84966961/121297814-d8074b00-c92d-11eb-9cbd-c2eb065d18f1.png)
 
- 디자인 화면에서 Component Tree에 현재는 제약 레이아웃이 되어있는 것이 보이고 이것을 우클릭하여 Convert View 기능을 통해 Linear Layout으로 바꿔줄 수 있다.
+ 디자인 화면에서 Component Tree에 현재는 제약 레이아웃이 되어있는 것이 보이고 이것을 우클릭하여 Convert View 기능을 통해 Linear Layout으로 바꿔줄 수 있다.   
+    
 <img src = "https://user-images.githubusercontent.com/84966961/121298139-5368fc80-c92e-11eb-8422-69b8a776474e.png" width="30%"> -> <img src = "https://user-images.githubusercontent.com/84966961/121298274-90cd8a00-c92e-11eb-85e9-6bd26f721fa9.png" width="30%"> -> <img src = "https://user-images.githubusercontent.com/84966961/121298314-9dea7900-c92e-11eb-8ef4-7b6ddf883143.png" width="30%">
 
  그 후 Layout의 방향(orientation)을 수직(Vertical)으로 바꿔주고 버튼 3개를 Component Tree에 계층적으로 넣었다.
-
+   
  **방향(orientation)** 이란 레이아웃 내부의 뷰들이 어떤 방향(아래로 혹은 오른쪽)으로 배치될지 정하는 것이다.
 
 <img src = "https://user-images.githubusercontent.com/84966961/121298419-cc685400-c92e-11eb-800f-2f04f5c40109.png" width="50%"><img src = "https://user-images.githubusercontent.com/84966961/121298539-05a0c400-c92f-11eb-8226-db589db92351.png" width="50%">
@@ -93,7 +94,7 @@ public class LayoutCodeActivity extends AppCompatActivity {
  
  ![image](https://user-images.githubusercontent.com/84966961/121302213-536bfb00-c934-11eb-882d-8ee365510731.png)
 
-  위 코드의 <activity android:name=".MainActivity"> 을 <activity android:name=".LayoutCodeActivity">로 바꾸어주면 잘 실행되는 것을 볼 수 있다.
+  위 코드의 "<activity android:name=".MainActivity">"를 "<activity android:name=".LayoutCodeActivity">"로 바꾸어주면 잘 실행되는 것을 볼 수 있다.
   
 ```
   <?xml version="1.0" encoding="utf-8"?>
@@ -118,8 +119,7 @@ public class LayoutCodeActivity extends AppCompatActivity {
 
 </manifest>
   ```
-  
- ![image](https://user-images.githubusercontent.com/84966961/121302962-6cc17700-c935-11eb-939c-6935ec214d6c.png)
+  <img src = "https://user-images.githubusercontent.com/84966961/121302962-6cc17700-c935-11eb-939c-6935ec214d6c.png" width="30%">
 
   <hr/>
   
@@ -224,17 +224,70 @@ public class LayoutCodeActivity extends AppCompatActivity {
  코드의 내용 처럼 weight의 크기를 통해 뷰들을 분할할 수 있다.
  
   <hr/>   
-  **실행화면**
+  **실행화면**   
+    
  ![image](https://user-images.githubusercontent.com/84966961/121311791-b616c400-c93f-11eb-92d4-450e4b331f2d.png)
 
+     
+ 
   <hr/>   
- 
+   
+ #### 147p : 상대 레이아웃 사용하기.
+ <img src = "https://user-images.githubusercontent.com/84966961/121312430-51a83480-c940-11eb-8878-93131da99325.png" width="30%">
+
+  **프로젝트 SampleRealativeLayout 생성**
     
+    Component Tree의 레이아웃을 상대 레이아웃(RelativeLayout) 으로 Convert Virw.. 해준다.
+     
+ <img src = "https://user-images.githubusercontent.com/84966961/121312852-c0858d80-c940-11eb-86c4-aa433a9b7e0e.png" width="50%">
+
+   이후 버튼 3개로 layout_alignParentleft, layout_below, ... 등과 같은 속성으로 버튼을 다음과 같이 정렬해주었다.   
+    
+ ![image](https://user-images.githubusercontent.com/84966961/121315755-9c777b80-c943-11eb-87f0-36567fcafebd.png)
+
+ <hr/>
+ **상대 레이아웃에서 부모 커네이너와의 상대적 위치를 이용하는 속성**
+    
+layout_alignParentTop    : 부모 컨테이너의 위쪽과 뷰의 위쪽을 맞춤
+
+layout_alignParentBottom : 부모 컨테이너의 아래쪽과 뷰의 아래쪽을 맞춤 
+
+layout_alignParentLeft   : 부모 컨테이너의 왼쪽 끝과 뷰의 왼쪽 끝을 맞춤
+
+layout_alignParentRight  : 부모 컨테이너의 오른쪽 끝과 뷰의 오른쪽 끝을 맞춤 
+
+layout_centerHorizontal  : 부모 컨테이너의 수평 방향 중앙에 배치함 
+
+layout_centerVertical    : 부모 컨테이너의 수직 방향 중앙에 배치함 
+
+layout_centerlnParent    : 부모 컨테이너의 수평과 수지 방향 중앙에 배치함
  
+<img src = "https://user-images.githubusercontent.com/84966961/121315887-badd7700-c943-11eb-9774-4f848841491a.png" width="50%">
+ 이미지 출처 : http://jwandroid.tistory.com/m/post/158
+    
+    
+ **상대 레이아웃에서 다른 뷰와의 상대적 위치를 이용하는 속성**
+
+layout_above         : 지정한 뷰의 위쪽에 배치함
+
+layout_below         : 지정한 뷰의 아래쪽에 배치함 
+
+layout_toLeftOf      : 지정한 뷰의 왼쪽에 배치함 
+
+layout_toRightOf     : 지정한 뷰의 오른쪽에 배치함
+
+layout_alignTop      : 지정한 뷰의 위쪽과 맞춤 
+
+layout_alignBottom   : 지정한 뷰의 아래쪽과 맞춤 
+
+layout_alignLeft     : 지정한 뷰의 왼쪽과 맞춤 
+
+layout_alignRight    : 지정한 뷰의 오른쪽과 맞춤 
+
+layout_alignBaseLine : 지정한 뷰의 내용물의 아래쪽 기준선(baseline)을 맞춤 
+
  
+<img src = "https://user-images.githubusercontent.com/84966961/121316029-dc3e6300-c943-11eb-9f1f-89274e4df799.png" width="50%">
+이미지 출처 : http://jwandroid.tistory.com/m/post/158
  
- 
- 
-  
-  
-  
+ <hr/>
