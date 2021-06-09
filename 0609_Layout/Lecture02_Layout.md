@@ -14,8 +14,11 @@
  5. 테이블 레이아웃 - 격자(Grid) 모델, 격자 모양의 배열을 사용하여 화면을 구성하는 방법.
 
 ![image](https://user-images.githubusercontent.com/84966961/121297314-19e3c180-c92d-11eb-9865-2f8297a7783a.png)
+   
+      
+ 또한, **뷰**는 **마진, 패딩, 보더**와 같은 뷰의 영역으로 구성되어 있고, **배경색** 또한 지정해 줄 수 있다.
 
-  #### 02-2 리니어 레이아웃 사용하기.
+  #### 120p : 02-2 리니어 레이아웃 사용하기.
  
  새로운 프로젝트를 생성하여 진행하였다. 프로젝트 제목은 SampleLinearLayout 이다.
  
@@ -32,7 +35,7 @@
 
  그 후 Layout의 방향(orientation)을 수직(Vertical)으로 바꿔주고 버튼 3개를 Component Tree에 계층적으로 넣었다.
 
- 방향(orientation)이란 레이아웃 내부의 뷰들이 어떤 방향(아래로 혹은 오른쪽)으로 배치될지 정하는 것이다.
+ **방향(orientation)** 이란 레이아웃 내부의 뷰들이 어떤 방향(아래로 혹은 오른쪽)으로 배치될지 정하는 것이다.
 
 <img src = "https://user-images.githubusercontent.com/84966961/121298419-cc685400-c92e-11eb-800f-2f04f5c40109.png" width="50%"><img src = "https://user-images.githubusercontent.com/84966961/121298539-05a0c400-c92f-11eb-8226-db589db92351.png" width="50%">
 
@@ -120,7 +123,7 @@ public class LayoutCodeActivity extends AppCompatActivity {
 
   <hr/>
   
- ### 130p : 뷰 정렬하기 Gravity
+ #### 130p : 뷰 정렬하기 Gravity
  
   layout_gravity  : 부모 컨테이너의 여유 공간에 뷰가 모두 채워지지 않아 여유 공간이 생겼을 때 여유 공간 안에서 뷰를 정렬함.
   gravity         : 뷰안에 표시하는 내용물을 정렬함.
@@ -156,12 +159,82 @@ public class LayoutCodeActivity extends AppCompatActivity {
   
 <img src = "https://user-images.githubusercontent.com/84966961/121305480-96c86880-c938-11eb-802a-9aa810d3580c.png" width="40%">
   
- ### 135p : 다양한 gravity 속성값들
-  
+ 
+  <hr/>
+#### 135p : 다양한 gravity 속성값들
 
-### 130p : 뷰 정렬하기 Gravity
-  
-  
+ <img src = "https://user-images.githubusercontent.com/84966961/121306766-33d7d100-c93a-11eb-96a8-11a841c7ffe6.png" >
+![image](https://user-images.githubusercontent.com/84966961/121306833-47833780-c93a-11eb-8597-2f0a1736d1e8.png)
+ 
+ 
+ <hr/>
+#### 139p : 뷰의 마진과 패딩 설정하기
+   <img src = "https://user-images.githubusercontent.com/84966961/121306920-6386d900-c93a-11eb-8c45-259b5b0e7fde.png"  width="35%">
+
+ padding.xml 생성
+ 
+ ![image](https://user-images.githubusercontent.com/84966961/121307979-82d23600-c93b-11eb-89d5-53be79f06f3f.png)
+
+    
+ ![image](https://user-images.githubusercontent.com/84966961/121309674-6fc06580-c93d-11eb-9152-52e08f0c2966.png)
+
+ 텍스트141p요약
+ 
+ <hr/>
+ #### 142p : 여유 공간을 분할하는 layout_weight 속성
+ 
+![image](https://user-images.githubusercontent.com/84966961/121311191-22dd8e80-c93f-11eb-9d9a-7c31ee7e0312.png)
+
+ ```xml
+     <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <TextView
+...
+            android:layout_weight="1"
+... />
+
+        <TextView
+...
+            android:layout_weight="1"
+.../>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1">
+
+        <TextView
+...
+            android:layout_weight="1"
+... />
+
+        <TextView
+...
+            android:layout_weight="2"
+... />
+
+    </LinearLayout>
+ ```
+ 
+ 코드의 내용 처럼 weight의 크기를 통해 뷰들을 분할할 수 있다.
+ 
+  <hr/>   
+  **실행화면**
+ ![image](https://user-images.githubusercontent.com/84966961/121311791-b616c400-c93f-11eb-92d4-450e4b331f2d.png)
+
+  <hr/>   
+ 
+    
+ 
+ 
+ 
+ 
+ 
   
   
   
