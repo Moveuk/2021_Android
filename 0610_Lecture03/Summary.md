@@ -245,7 +245,160 @@ public class MainActivity extends AppCompatActivity {
    
 ### 168p : 도전!03 두 개의 이미지 뷰에 이미지 번갈아 보여주기.  
  
- 
- 
- 
+```java
+package org.techtown.mission03;
+
+import android.content.res.Resources;
+import android.graphics.drawable.BitmapDrawable;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.ScrollView;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+public class MainActivity_master extends AppCompatActivity {
+    ScrollView scrollView;
+    ScrollView scrollView2;
+    ImageView imageView;
+    ImageView imageView2;
+    Button button;
+    Button button2;
+    BitmapDrawable bitmap;
+    BitmapDrawable bitmap2;
+    int imageIndex;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        imageView = findViewById((R.id.imageView));
+        imageView2 = findViewById((R.id.imageView2));
+
+        button = findViewById(R.id.button);
+        button2 = findViewById(R.id.button2);
+
+        button.setOnClickListener(new View.OnClickListener() {
+            // OnClickListener()인터페이스임.
+            @Override
+            public void onClick(View v) {
+                moveImageUp();
+            }
+        });
+
+        button2.setOnClickListener(new View.OnClickListener() {
+            // OnClickListener()인터페이스임.
+            @Override
+            public void onClick(View v) {
+                moveImageDown();
+            }
+        });
+
+    }
+
+    private void moveImageDown() {
+        imageView.setImageResource(R.drawable.image01);
+        imageView2.setImageResource(R.drawable.image02);
+
+        imageView.invalidate(); //이미지 화면에 그려주는 것.
+        imageView2.invalidate(); //이미지 화면에 그려주는 것.
+    }
+
+    private void moveImageUp() {
+        imageView.setImageResource(R.drawable.image02);
+        imageView2.setImageResource(R.drawable.image01);
+
+        imageView.invalidate(); //이미지 화면에 그려주는 것.
+        imageView2.invalidate(); //이미지 화면에 그려주는 것.
+    }
+}
+```
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity" >
+
+    <HorizontalScrollView
+        android:id="@+id/scrollView"
+        android:layout_above="@id/buttonLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true">
+
+        <ScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scaleType="matrix"/>
+        </ScrollView>
+    </HorizontalScrollView>
+
+    <LinearLayout
+        android:id="@+id/buttonLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_centerInParent="true">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center_horizontal"
+            >
+
+            <Button
+                android:id="@+id/button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="    ▲    "
+                android:textSize="18sp"
+                />
+
+            <Button
+                android:id="@+id/button2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="    ▼    "
+                android:textSize="18sp"
+                />
+        </LinearLayout>
+    </LinearLayout>
+
+    <HorizontalScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/buttonLayout"
+        android:layout_alignParentBottom="true"
+        >
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:scaleType="matrix"
+                />
+
+        </ScrollView>
+    </HorizontalScrollView>
+</RelativeLayout>
+```
  
