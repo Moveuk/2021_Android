@@ -84,7 +84,7 @@
  
   다음은 버튼에 onclick 속성에 원하는 (java에서 사용할)메소드 이름을 넣어주어 java 파일 작성을 시작하면 된다.
  
-  **'findViewById'** 라는 기능을 이용하여 우리가 원하는 이미지 뷰를 찾아줄 것이다. **'findViewById'**는 HTML에서 getElementById와 같은 기능을 한다.
+  **'findViewById'** 라는 기능을 이용하여 우리가 원하는 이미지 뷰를 찾아줄 것이다. **findViewById**는 HTML에서 getElementById와 같은 기능을 한다.
     
  ```java
   imageView = findViewById(R.id.imageView);
