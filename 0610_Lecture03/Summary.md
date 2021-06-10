@@ -188,7 +188,7 @@ public class MainActivity extends AppCompatActivity {
 }
 ```
 
- xml 파일에서 이미지를 불러와 삽입할 수 도 있지만 우리는 java를 통해 이미지 삽입을 해보려고 한다.
+ xml 파일에서 이미지를 불러와 삽입할 수 도 있지만 우리는 java를 통해 이미지 삽입을 해보려고 한다.   
  ```java
 ...
       Resources res = getResources();
@@ -202,19 +202,19 @@ public class MainActivity extends AppCompatActivity {
 ...
 ```
  위 코드 중 일부분의 코드이다.   
- 첫째줄 : res에 application의 resources에 접근할 수 있는 클래스를 인스턴스화시켜준다.
- 둘째줄 : BitmapDrawable 타입으로 미리 선언한 bitmap에 이미지01파일을 불러와서 타입 변환을 시켜준다.
- 셋째줄 : getIntrinsicWidth()메소드를 사용하여 본래 비트맵파일의 너비값를 기억해둔다.
- 넷째줄 : getIntrinsicWidth()메소드를 사용하여 본래 비트맵파일의 높이값를 기억해둔다.
- 
- 다섯째줄 : 이미지뷰에 비트맵 그림 파일을 세팅해준다.
- 여섯째줄 : 너비를 설정해준다.
- 일곱째줄 : 높이를 설정해준다.
- 
- 와 같으며 다양한 클래스들을 import시켜야 한다.
- 
-  또한, FrameLayout 에서 이미지를 변화시키는 코드를 활용해 스크롤 뷰에서도 이미지 변환을 줄 수 있다.
- 
+ 첫째줄 : res에 application의 resources에 접근할 수 있는 클래스를 인스턴스화시켜준다.   
+ 둘째줄 : BitmapDrawable 타입으로 미리 선언한 bitmap에 이미지01파일을 불러와서 타입 변환을 시켜준다.   
+ 셋째줄 : getIntrinsicWidth()메소드를 사용하여 본래 비트맵파일의 너비값를 기억해둔다.   
+ 넷째줄 : getIntrinsicWidth()메소드를 사용하여 본래 비트맵파일의 높이값를 기억해둔다.   
+    
+ 다섯째줄 : 이미지뷰에 비트맵 그림 파일을 세팅해준다.   
+ 여섯째줄 : 너비를 설정해준다.   
+ 일곱째줄 : 높이를 설정해준다.   
+    
+ 와 같으며 다양한 클래스들을 import시켜야 한다.   
+     
+  또한, FrameLayout 에서 이미지를 변화시키는 코드를 활용해 스크롤 뷰에서도 이미지 변환을 줄 수 있다.    
+    
  **이미지가 다시 돌아오게 하는것.**
  ```java
     private void changeImage() {
