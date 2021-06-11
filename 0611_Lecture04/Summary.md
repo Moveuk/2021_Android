@@ -1,6 +1,6 @@
 # 03 기본 위젯과 드로어블 사용하기
  
-   ## 171p : 03-1 기본 위젯 다시 한 번 자세히 공부하기
+\t## 171p : 03-1 기본 위젯 다시 한 번 자세히 공부하기
 
 1. SampleWidjet 프로젝트를 생성하여 수업 진행! 다음과 같은 계층 구조를 만들어 준다.
 ![image](https://user-images.githubusercontent.com/84966961/121638774-7f1eea80-cac6-11eb-816c-ffe1cc164c0c.png)
@@ -119,7 +119,7 @@ android:maxLines="1"
 ```
 9. 177p ~ 179p : 예제 완성
     
-![image](https://user-images.githubusercontent.com/84966961/121643100-6580a180-cacc-11eb-9596-c29f4fdf9fd5.png)![image](https://user-images.githubusercontent.com/84966961/121643202-847f3380-cacc-11eb-830f-835b18a9ce06.png)
+![image](https://user-images.githubusercontent.com/84966961/121643100-6580a180-cacc-11eb-9596-c29f4fdf9fd5.png)![image](https://user-images.githubusercontent.com/84966961/121643502-d922ae80-cacc-11eb-8671-bedd755d3fd8.png)
 
    
 
