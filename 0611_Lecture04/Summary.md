@@ -163,9 +163,9 @@ android:maxLines="1"
 
     <item android:drawable="@drawable/finger"/>
 </selector>
-```
-4. 이 코드를 이제 버튼의 백그라운드 속성에 xml 파일을 직접 넣어주면 버튼이 작동한다.(HTML 구성과 비슷.)
-**핸드폰 이미지 변환 전 후**
+```   
+4. 이 코드를 이제 버튼의 백그라운드 속성에 xml 파일을 직접 넣어주면 버튼이 작동한다.(HTML 구성과 비슷.)   
+**핸드폰 이미지 변환 전 후**    
 ![image](https://user-images.githubusercontent.com/84966961/121647178-11c48700-cad1-11eb-9d60-301d1324c689.png)![image](https://user-images.githubusercontent.com/84966961/121647132-040f0180-cad1-11eb-8c83-1b669345ca9e.png)
 
 
