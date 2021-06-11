@@ -143,7 +143,7 @@ android:maxLines="1"
    
   <hr/>
     
-## 187p : 드로어블 만들기
+## 187p : 03-2 드로어블 만들기
 
 1. SampleDrawable 프로젝트 작성.
 2. 189p : 드로어블에 대한 설명
@@ -164,27 +164,118 @@ android:maxLines="1"
     <item android:drawable="@drawable/finger"/>
 </selector>
 ```   
-4. 이 코드를 이제 버튼의 백그라운드 속성에 xml 파일을 직접 넣어주면 버튼이 작동한다.(HTML 구성과 비슷.)   
+4. 이 코드를 이제 버튼의 백그라운드 속성에 xml 파일을 직접 넣어주면 버튼이 작동한다.(HTML 구성과 비슷.)     
+    
 **핸드폰 이미지 변환 전 후**    
 ![image](https://user-images.githubusercontent.com/84966961/121647178-11c48700-cad1-11eb-9d60-301d1324c689.png)![image](https://user-images.githubusercontent.com/84966961/121647132-040f0180-cad1-11eb-8c83-1b669345ca9e.png)
 
+   
+  <hr/>
+    
+## 196p : 03-3 이벤트 처리 이해하기
 
-5. 
-6. ㅁ
-7. ㅁ
-8. ㅁ
-9. ㅁㅁ
-10. ㅁ
-11. ㅁ
-12. ㅁㅁ
-13. ㅁ
-14. ㅁ
-15. ㅁㅁ
-16. ㅁ
-17. ㅁ
-18. ㅁ
-19. ㅁㅁ
-20. 
+1. 이벤트 처리 방식   
+   
+ 지난 수업에서 이벤트 핸들러를 이용한 다양한 이벤트들을 이미 접하였다. 하지만 다른 디바이스와는 다른 스마트폰에서만의 이벤트 특징은 터치 이벤트가 가능하다는 점이다. 그 외에도 키 이벤트, 제스처 이벤트, 포커스, 화면 방향 변경 같은 이벤트들이 있다.   
+   
+ 또한, 이벤트에 대한 각각의 View.OnTouchListener, View.OnkeyListner 등 다양한 리스너가 존재하며 일어난 이벤트들을 감지한다.   
+   
+ 감지한 이벤트들을 198p의 테이블에 존재하는 다양한 메소드들을 오버라이딩(Override)하여 기능을 추가하는 것이다.
+
+2. SampleEvent 를 작성하여 Event 기능의 예제를 만들어보자.     
+ 먼저 디자인을 완성시켰다.
+**activity_main.xml**
+```
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@android:color/holo_blue_dark"
+        android:layout_weight="1"/>
+
+    <View
+        android:id="@+id/view2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@android:color/holo_orange_light"
+        android:layout_weight="1"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="TextView">
+
+            </TextView>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
+```
+**구성 화면**    
+![image](https://user-images.githubusercontent.com/84966961/121653188-5eab5c00-cad7-11eb-960a-ecb16b7e47c4.png)
+
+3. 첫번째 화면에 대한 기능 구현을 다음과 같이하였다.
+```java
+public class MainActivity extends AppCompatActivity {
+
+    TextView textView;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        textView = findViewById(R.id.textView);     // 텍스트 뷰 주소값을 찾아옴.
+
+        View view = findViewById(R.id.view);        // 뷰 주소값을 찾아옴.
+        view.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) { //첫번째 뷰를 터치했을 때 동작되는 메소드.
+                int action = motionEvent.getAction();   // 액션에 대한 값이 정수형으로 저장됨. if문 사용.
+
+                float curX = motionEvent.getX();        // 출력을 위한 모션이벤트의 x값 저장.
+                float curY = motionEvent.getY();        // 출력을 위한 모션이벤트의 y값 저장.
+
+                if (action == MotionEvent.ACTION_DOWN) {        // 손가락이 눌렸을 때
+                    println("손가락 눌림 : " + curX + ", " + curY); // 기본으로 제공되는 메소드가 아닌 아래 새로 만들어준 메소드.
+                } else if (action == MotionEvent.ACTION_MOVE) { // 손가락이 눌린 상태로 움직였을 때
+                    println("손가락 움직임 : " + curX + ", " + curY);
+                } else if (action == MotionEvent.ACTION_UP) {   // 손가락이 떼졌을 때
+                    println("손가락 뗌 : " + curX + ", " + curY);
+                }
+
+                return true;
+            }
+        });
+    }
+
+    public void println(String data) {
+        textView.append(data + "\n");       // textView에 데이터를 보여라(더해라) 라는 기능을 만들어 본문에서 사용함.
+    }
+}
+```
+**실행 화면**   
+![image](https://user-images.githubusercontent.com/84966961/121654722-fc535b00-cad8-11eb-9f2c-cea03f440180.png)   
+   
+ 첫번째 파란색 뷰를 터치할시 아래 텍스트 뷰에 각각 좌표와 기능들이 찍히는 것을 알 수 있다.
 
 
 
