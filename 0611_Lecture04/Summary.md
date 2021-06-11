@@ -1,8 +1,6 @@
 # 03 기본 위젯과 드로어블 사용하기
-   
- <hr/>
  
- ## 171p : 03-1 기본 위젯 다시 한 번 자세히 공부하기
+   ## 171p : 03-1 기본 위젯 다시 한 번 자세히 공부하기
 
 1. SampleWidjet 프로젝트를 생성하여 수업 진행! 다음과 같은 계층 구조를 만들어 준다.
 ![image](https://user-images.githubusercontent.com/84966961/121638774-7f1eea80-cac6-11eb-816c-ffe1cc164c0c.png)
