@@ -152,7 +152,7 @@ public class MainActivity extends AppCompatActivity {
     
 ![image](https://user-images.githubusercontent.com/84966961/121848129-8e02d880-cd24-11eb-9096-17388496793d.png)
 
- 4. 스마트폰의 방향이 바뀔 때 메모리에 있던 액티비티가 사라지고 다시 로딩이 된다는 개념을 잘 기억한 상태로 디바이스를 실행시켜 확인해보도록 하자. 다음 그림처럼 방향을 돌릴 때마다 showToast 기능을 통해 수명주기, 생명주기 메서드가 호출되는 것을 알 수 있다.   
+ 4. 스마트폰의 방향이 바뀔 때 메모리에 있던 액티비티가 사라지고 다시 로딩이 된다는 개념을 잘 기억한 상태로 디바이스를 실행시켜 확인해보도록 하자. 다음 그림처럼 방향을 돌릴 때마다 메모리가 리셋이 되고 수명주기, 생명주기 메서드들이 자동으로 호출되며 showToast 기능이 작동되는 것을 알 수 있다.   
    
  <img src="https://user-images.githubusercontent.com/84966961/121849046-d373d580-cd25-11eb-8c21-4e472f41d54f.png" width="30%"> <img src="https://user-images.githubusercontent.com/84966961/121849058-d66ec600-cd25-11eb-8b9c-1005365cd45b.png" width="65%">
 
