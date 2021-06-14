@@ -436,9 +436,14 @@ public class MainActivity extends AppCompatActivity {
 | builder.setPositiveButton | 예 버튼 생성하는 속성. |
 | builder.setNegativeButton | 아니오 버튼 생성하는 속성. |
 | builder.setNeutralButton | 취소 버튼 생성하는 속성. |
-
-
-
+   
+ 단순히 창만 띄우려면 다음 코드만 필요하다. 하지만 각 버튼과 기능을 넣어주고 싶다면 builder와 관련된 코드를 넣어줘야 한다.   
+    
+```java
+         AlertDialog dialog = builder.create();  // 대화상자 객체 생성 후 보여주기(show).
+        dialog.show();
+```
+   
    <br/><br/>
 <hr/>
 
