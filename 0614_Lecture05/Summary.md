@@ -21,6 +21,7 @@ Key Word :
    
 <br/><br/><br/>
 <hr/>
+   
 ### 교재 202p : 제스처 이벤트 처리하기
    
 4. 제스처 이벤트는 터치 이벤트 중에서 스크롤 등을 구별한 후 알려주는 이벤트 이다. 제스처 이벤트를 처리해주는 클래스는 Gesture Detector이며, 이 객체를 만들고 터치 이벤트를 전달하면 GestureDetector 객체에서 각 상황에 맞는 메서드를 호출한다. 화면에 추가했던 두 번째 뷰(황색)를 터치했을 때 제스처 이벤트로 처리하도록 onCreate() 메서드 안에 다음 코드를 추가한다.   
@@ -115,7 +116,7 @@ public class MainActivity extends AppCompatActivity {
    
 **실행 화면**
    
-<img src="![image](https://user-images.githubusercontent.com/84966961/121845706-ce605780-cd20-11eb-89be-a00488e6cb24.png)" width="40%">
+<img src="https://user-images.githubusercontent.com/84966961/121845706-ce605780-cd20-11eb-89be-a00488e6cb24.png" width="40%">
    
  **GestureDetector의 메소드들** : 교재 198p      
     
