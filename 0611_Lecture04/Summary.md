@@ -1,5 +1,5 @@
 # 03 기본 위젯과 드로어블 사용하기
- Key Word : 위젯(Widget), 드로어블 폴더(R.drawable), 버튼(Button)의 종류(radio, checkbox, ...),
+ Key Word : 위젯(Widget), 드로어블 폴더(R.drawable), 버튼(Button)의 종류(radio, checkbox, ...), 에딧 텍스트(EditText, planeText), Pressed event(손가락 표시), View.OnTouchListener, View.OnkeyListner, OnTouch 기능
    
 <hr/>
    
@@ -163,7 +163,7 @@ android:maxLines="1"
 <br/><br/><br/>
 <hr/>
    
-10. 180p : 에디트 텍스트   
+10. 180p : **에디트 텍스트**   
 ```
     <LinearLayout
         android:layout_width="match_parent"
@@ -173,7 +173,7 @@ android:maxLines="1"
         android:gravity="center_horizontal">
 
         <EditText
-            android:id="@+id/deitTextTextPersonName"
+            android:id="@+id/editTextTextPersonName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"                         // ems : 글자수 제한?
