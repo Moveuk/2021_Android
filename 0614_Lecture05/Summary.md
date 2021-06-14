@@ -274,10 +274,29 @@ public class MainActivity extends AppCompatActivity {
 
  EditText View에 각각 x값 y값을 넣어보면 다음과 같이 변한다.   
     
-<img src="(https://user-images.githubusercontent.com/84966961/121853692-310b2080-cd2c-11eb-82b4-3990fdd33377.png)" width="40%"> <img src="https://user-images.githubusercontent.com/84966961/121853377-d07be380-cd2b-11eb-8565-918ec33d517c.png" width="40%">
+<img src="https://user-images.githubusercontent.com/84966961/121853692-310b2080-cd2c-11eb-82b4-3990fdd33377.png" width="40%"> <img src="https://user-images.githubusercontent.com/84966961/121853377-d07be380-cd2b-11eb-8565-918ec33d517c.png" width="40%">
+    
+ 기존 코드를 다음과 같이 위치값을 알기 쉽도록 바꾸어 보았다.   
+    
+```java
+    public void onButton1Clicked(View v) {
+        try {
+            int xOffset = Integer.parseInt(editText.getText().toString());
+            int yOffset = Integer.parseInt(editText2.getText().toString());
+            Toast toastView = Toast.makeText(this, "위치값 = X : "+xOffset+",Y : "+yOffset, Toast.LENGTH_LONG);
 
+                toastView.setGravity(Gravity.TOP|Gravity.TOP,xOffset,yOffset);
+                toastView.show();
+        } catch (NumberFormatException e) {
+            e.printStackTrace();
+        }
+```
+   
+**화면**
 
-
+<img src="https://user-images.githubusercontent.com/84966961/121854036-995a0200-cd2c-11eb-965e-becdb51dfd3e.png" width="30%">
+<img src="https://user-images.githubusercontent.com/84966961/121854510-39179000-cd2d-11eb-8ab9-b35d28ba7f9e.png" width="30%">
+<img src="https://user-images.githubusercontent.com/84966961/121854527-3d43ad80-cd2d-11eb-9a51-869aa5ce082e.png" width="30%">
 
 
 
