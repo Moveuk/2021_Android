@@ -1,5 +1,5 @@
 # 이벤트 처리하기!
-Key Word : 
+Key Word : 이벤트(Event), GestureDetector, 수명 주기, 생명 주기(life cycle), 단말 방향 전환(Orientation), 토스트 메세지(Toast Message), 토스트 창 위치 변환(setGravity), 스낵바(Snackbar), 알림 대화상자(Dialog), 빌더(builder)
   <hr/>
     
 ## 196p : 03-3 이벤트 처리 이해하기
