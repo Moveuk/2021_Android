@@ -138,9 +138,34 @@ public class MainActivity extends AppCompatActivity {
 
 <br/><br/><br/>
 <hr/>
+   
+### 교재 207p : 단말 방향을 전환했을 때 이벤트 처리하기   
+   
+ 1. 스마트폰의 세로와 가로 방향에 따른 이벤트 처리를 예제로 해보기 위해서 SampleOrientation 프로젝트를 만들었다.   
+ 2. 이 후 res 폴더에 오른쪽 클릭을 하여 새로운 폴더 `layout-land`를 만들어준다.   
+   
+![image](https://user-images.githubusercontent.com/84966961/121847737-03ba7480-cd24-11eb-8368-2ef8f1fd7543.png)   
+![image](https://user-images.githubusercontent.com/84966961/121847781-1339bd80-cd24-11eb-9cbb-afcb15e865e1.png)    
+   
+ 3. 스마트폰은 폴더 이름을 통해 layout의 방향에 맞는 폴더 내부의 파일을 가져온다. 또한, 방향이 바뀔 때마다 메모리에 있는 액티비티들을 모두 없앴다가 새롭게 로딩을 시킨다.    
+ 만든 폴더에 `activity_main.xml`을 복사하여 주고 그림과 같이 `hello world!` 텍스트를 가로와 세로 방향에 맞게 정리한다.   
+    
+![image](https://user-images.githubusercontent.com/84966961/121848129-8e02d880-cd24-11eb-9096-17388496793d.png)
 
-5. ㅁ
-6. ㅁ
-7. ㅁ
-8. ㅁ
-9. 
+ 4. 스마트폰의 방향이 바뀔 때 메모리에 있던 액티비티가 사라지고 다시 로딩이 된다는 개념을 잘 기억한 상태로 디바이스를 실행시켜 확인해보도록 하자. 다음 그림처럼 방향을 돌릴 때마다 showToast 기능을 통해 수명주기, 생명주기 메서드가 호출되는 것을 알 수 있다.   
+   
+ <img src="https://user-images.githubusercontent.com/84966961/121849046-d373d580-cd25-11eb-8c21-4e472f41d54f.png" width="30%"> <img src="https://user-images.githubusercontent.com/84966961/121849058-d66ec600-cd25-11eb-8b9c-1005365cd45b.png" width="30%">
+
+ 5. 
+ 6.  
+ 7.   
+ 8. ㅁ
+ 9. ㅁㅁ
+ 10. ㅁ
+ 11. ㅁ
+ 12. ㅁㅁ
+ 13. ㅁ
+ 14. ㅁ
+ 15. ㅁㅁ
+ 16. ㅁ
+ 17. 
