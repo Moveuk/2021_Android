@@ -174,12 +174,129 @@ public class MainActivity extends AppCompatActivity {
     }
 ```
    
- 매개변수로 첫번째 인자는 컨텍스트이며 두번째 인자인 data는 우리가 띄우고 싶은 문구를 의미하고, 세번째 인자인 Toast.LENGTH_LONG은 얼마만큼의 시간동안 보여줄지 즉 노출 시간(short_4초(4000ms)와 long_7초(7000ms) 가량)을 뜻한다. 마지막 메소드 .show()를 통하여 세팅된 토스트 메세지를 출력하게 된다.
+ 매개변수로 첫번째 인자는 컨텍스트이며 두번째 인자인 data는 우리가 띄우고 싶은 문구를 의미하고, 세번째 인자인 Toast.LENGTH_LONG은 얼마만큼의 시간동안 보여줄지 즉 노출 시간(short_4초(4000ms)와 long_7초(7000ms) 가량)을 뜻한다. 마지막 메소드 .show()를 통하여 세팅된 토스트 메세지를 출력하게 된다.    
+     
+ 전체 메서드를 관장하는 것 : 컨텍스트 ( 메인에서는 전체가 컨텍스트이다.)
+ 
+<br/><br/>
+<hr/>
+   
+ ### 교재 217p : 03-4 토스트, 스낵바 그리고 대화상자 사용하기.   
+ 
+ 토스트 메세지 이외에도 스낵바나 대화상자라는 메시지 상자들이 있다.    
+    
+1. SampleToast 프로젝트를 만든후 다음의(교재 218p) 구성을 만들어 보자.
+ 
+ > LinearLayout
+ >> EditText
+ >> EditText
+ >> Button   
+    
+**화면 구성 코드**
+```
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/editTextTextPersonName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="X 위치"
+            android:inputType="numberSigned"
+            android:text="Name"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/editTextTextPersonName2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="Y 위치"
+            android:inputType="numberSigned"
+            android:text="Name"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="띄우기"
+            android:textSize="20sp"
+            android:onClick="onButton1Clicked"/>
+
+    </LinearLayout>
+</LinearLayout>
+```
+   
+**위치값 지정에 따른 Toast 메세지 표출 기능 코드**
+
+```java
+public class MainActivity extends AppCompatActivity {
+    EditText editText;
+    EditText editText2;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        editText = findViewById(R.id.editText);
+        editText2 = findViewById(R.id.editText2);
+    }
+
+    public void onButton1Clicked(View v) {
+        try {
+            Toast toastView = Toast.makeText(this, "위치가 바뀐 토스트 메시지 입니다.", Toast.LENGTH_LONG);
+            int xOffset = Integer.parseInt(editText.getText().toString());
+            int yOffset = Integer.parseInt(editText2.getText().toString());
+
+                toastView.setGravity(Gravity.TOP|Gravity.TOP,xOffset,yOffset);
+                toastView.show();
+        } catch (NumberFormatException e) {
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+ EditText View에 각각 x값 y값을 넣어보면 다음과 같이 변한다.   
+    
+<img src="https://user-images.githubusercontent.com/84966961/121853301-bb06b980-cd2b-11eb-8e07-4d2857974fe3.png" width="40%"> <img src="https://user-images.githubusercontent.com/84966961/121853377-d07be380-cd2b-11eb-8565-918ec33d517c.png" width="40%">
+
+
+
+
+
 
 <br/><br/>
 <hr/>
    
- 5. 
+ 5. 진행사항을 저장시켜주는 onSaveInstanceState 콜백 메서드
+   
+ 단말의 방향이 바뀌는 기능을 해보았다. 하지만 문제점은 예를들어 사용자가 결제를 하던 도중 방향이 돌아가게 되면 기존까지 모든 액티비티들이 리셋되고 다시 처음부터 실행되어 다시 결제를 시도해야하는 불편함이 생길 수 있다는 점이다. 이런 문제를 해결하기 위하여 액티비티 안에 선언해 두었던 변수 값이 사라지므로 변수의 값을 저장했다가 다시 복원하는 방법이 있어야 한다. 이런 문제를 해결할 수 있도록 onSaveInstanceState 콜백 메서드가 제공된다. 이 메서드는 액티비티가 종료되기 전의 상태를 저장하고, 이 때 저장된 상태를 onCreate() 메서드가 호출 될 때 다시 복원시킬 수 있는 기능을 한다.   
+ 
+
+
+
+
+
+ 
+<br/><br/>
+<hr/>
+   
  6.  
  7.   
  8. ㅁ
