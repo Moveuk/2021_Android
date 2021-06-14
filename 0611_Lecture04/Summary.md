@@ -1,17 +1,25 @@
 # 03 기본 위젯과 드로어블 사용하기
- 
+ Key Word : 위젯(Widget), 드로어블 폴더(R.drawable), 버튼(Button)의 종류(radio, checkbox, ...),
+   
+<hr/>
+   
 ## 171p : 03-1 기본 위젯 다시 한 번 자세히 공부하기
 
 1. SampleWidjet 프로젝트를 생성하여 수업 진행! 다음과 같은 계층 구조를 만들어 준다.
 ![image](https://user-images.githubusercontent.com/84966961/121638774-7f1eea80-cac6-11eb-816c-ffe1cc164c0c.png)
    
-2. 실제 앱을 실행해보면 다음과 같은 화면이 뜨게 되는 데 상단의 SampleWidget이라는 문자열은 R.values.strings.xml 파일에 들어있는 정보이며, R.manifests.AndroidManifest.xml 내부의 label 에 지정되어있다.    
+<br/><br/><br/>
+<hr/>
+   
+2. 실제 앱을 실행해보면 다음과 같은 화면이 뜨게 되는 데 상단의 `SampleWidget`이라는 문자열은 `R.values.strings.xml` 파일에 들어있는 정보이며, `R.manifests.AndroidManifest.xml` 내부의 `label` 에 지정되어있다.    
+    
 **R.values.strings.xml**
 ```
 <resources>
     <string name="app_name">SampleWidget</string>
 </resources>
 ```
+   
 **R.manifests.AndroidManifest.xml**
 ```
     <application
@@ -22,8 +30,12 @@
 ```   
  **실행화면**    
  ![image](https://user-images.githubusercontent.com/84966961/121640233-a1b20300-cac8-11eb-87f1-6b47fbd73337.png)
-    
-3. 첫번째 텍스트뷰에 들어올 값을 R.values.strings.xml 파일에 추가하여 사람 이름을 참조 시켜보자.   
+   
+<br/><br/><br/>
+<hr/>
+   
+3. 첫번째 텍스트뷰에 들어올 값을 `R.values.strings.xml` 파일에 추가하여 사람 이름을 참조 시켜보자.   
+   
 **R.values.strings.xml**
 ```
 <resources>
@@ -31,6 +43,7 @@
     <string name="person_name">이동욱</string>
 </resources>
 ```
+   
 **R.layout.activity_main.xml**
 ```
     <TextView
@@ -39,11 +52,16 @@
         android:layout_height="wrap_content"
         android:text="@string/person_name"/>
  ...
-``` 
+```    
+   
  **실행화면**
 ![image](https://user-images.githubusercontent.com/84966961/121640345-bf7f6800-cac8-11eb-90ef-46ef01144530.png)
    
+<br/><br/><br/>
+<hr/>
+   
 4. 173p 부터 각종 텍스트 코드를 넣었다.   
+   
 **R.layout.activity_main.xml**    
 ```
     <TextView
@@ -66,28 +84,45 @@
         android:maxLines="1"
         android:text="여기에 이름을 입력하세요. 이름은 한 줄로 표시됩니다."/>
   ```
+     
  **실행화면**    
 ![image](https://user-images.githubusercontent.com/84966961/121640502-f8b7d800-cac8-11eb-8b85-9f689035dc8c.png)
    
+<br/><br/><br/>
+<hr/>
+   
 5. 176p 코드에 maxline = 1을 넣게 되면 한줄만 나오게됨.
+   
 ```
 android:maxLines="1"
 ```   
+   
 **실행화면**    
 ![image](https://user-images.githubusercontent.com/84966961/121640719-3b79b000-cac9-11eb-9b22-3bd576b166b1.png)
    
+<br/><br/><br/>
+<hr/>
+   
 6. 177p 버튼은 사용자가 클릭하면 클릭에 대한 반응을 하는 위젯입니다.    
-  radio : 동그란 버튼   
-  checkbox : 체크 박스 버튼   
-  과 같이 다양한 버튼이 존재함.   
+   radio : 동그란 버튼   
+   checkbox : 체크 박스 버튼   
+   과 같이 다양한 버튼이 존재함.   
+    
  **팔레트 패널에 보이는 다양한 버튼들**
 ![image](https://user-images.githubusercontent.com/84966961/121640858-6d8b1200-cac9-11eb-8eb3-c92bba729774.png)
-
-7. 버튼들을 골라 다음과 같이 정렬하였다.    
+   
+<br/><br/><br/>
+<hr/>
+   7. 버튼들을 골라 다음과 같이 정렬하였다.    
+   
 **실행화면**    
  ![image](https://user-images.githubusercontent.com/84966961/121641231-e1c5b580-cac9-11eb-800d-46f238dbcb79.png)
    
+<br/><br/><br/>
+<hr/>
+   
 8. 안드로이드 스튜디오 xml 파일의 코드는 HTML 방식과 비슷하고 자동 완성 기능과 직관적인 문법 명령어를 사용하기 때문에 코딩을 통한 디자인도 쉬운 편이다.    
+   
 **R.layout.activity_main.xml**
 ```
  ...
@@ -117,11 +152,18 @@ android:maxLines="1"
             android:text="여성" />
  ...
 ```
-9. 177p ~ 179p : 예제 완성
+   
+<br/><br/><br/>
+<hr/>
+   
+9. 177p ~ 179p : 예제 완성   
     
 ![image](https://user-images.githubusercontent.com/84966961/121643100-6580a180-cacc-11eb-9596-c29f4fdf9fd5.png)![image](https://user-images.githubusercontent.com/84966961/121643502-d922ae80-cacc-11eb-8671-bedd755d3fd8.png)
-
-10. 180p : 에디트 텍스트
+   
+<br/><br/><br/>
+<hr/>
+   
+10. 180p : 에디트 텍스트   
 ```
     <LinearLayout
         android:layout_width="match_parent"
@@ -141,20 +183,27 @@ android:maxLines="1"
 ```
 ![image](https://user-images.githubusercontent.com/84966961/121644819-7af6cb00-cace-11eb-8731-2c28ba72dede.png)
    
-  <hr/>
-    
-## 187p : 03-2 드로어블 만들기
-
-1. SampleDrawable 프로젝트 작성.
-2. 189p : 드로어블에 대한 설명
-
-
-
-
+   
+<br/><br/><br/>
+<hr/>
+   
+## 187p : 03-2 드로어블 만들기   
+   
+1. SampleDrawable 프로젝트 작성.   
+2. 189p : 드로어블에 대한 설명   
 
 
+
+
+
+   
+<br/><br/><br/>
+<hr/>
+   
 3. 버튼에 기본 이미지를 삽입한 상태에서 버튼을 눌렀을 때 버튼의 이미지가 변화하는 기능을 추가하려고 한다. 이를 위해 R.drawable 폴더에 finger_drawable.xml 파일을 생성후 다음과 같은 코드를 작성해준다.   
+   
 **R.drawable.finger_drawable.xml**
+   
 ```
 <?xml version="1.0" encoding="utf-8"?>
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
@@ -164,16 +213,22 @@ android:maxLines="1"
     <item android:drawable="@drawable/finger"/>
 </selector>
 ```   
+   
+<br/><br/><br/>
+<hr/>
+   
 4. 이 코드를 이제 버튼의 백그라운드 속성에 xml 파일을 직접 넣어주면 버튼이 작동한다.(HTML 구성과 비슷.)     
     
 **핸드폰 이미지 변환 전 후**    
 ![image](https://user-images.githubusercontent.com/84966961/121647178-11c48700-cad1-11eb-9d60-301d1324c689.png)![image](https://user-images.githubusercontent.com/84966961/121647132-040f0180-cad1-11eb-8c83-1b669345ca9e.png)
 
    
-  <hr/>
-    
-## 196p : 03-3 이벤트 처리 이해하기
-
+   
+<br/><br/><br/>
+<hr/>
+   
+## 196p : 03-3 이벤트 처리 이해하기   
+   
 1. 이벤트 처리 방식   
    
  지난 수업에서 이벤트 핸들러를 이용한 다양한 이벤트들을 이미 접하였다. 하지만 다른 디바이스와는 다른 스마트폰에서만의 이벤트 특징은 터치 이벤트가 가능하다는 점이다. 그 외에도 키 이벤트, 제스처 이벤트, 포커스, 화면 방향 변경 같은 이벤트들이 있다.   
@@ -181,7 +236,10 @@ android:maxLines="1"
  또한, 이벤트에 대한 각각의 View.OnTouchListener, View.OnkeyListner 등 다양한 리스너가 존재하며 일어난 이벤트들을 감지한다.   
    
  감지한 이벤트들을 198p의 테이블에 존재하는 다양한 메소드들을 오버라이딩(Override)하여 기능을 추가하는 것이다.
-
+   
+<br/><br/><br/>
+<hr/>
+   
 2. SampleEvent 를 작성하여 Event 기능의 예제를 만들어보자.     
  먼저 디자인을 완성시켰다.   
 **activity_main.xml**
@@ -229,9 +287,13 @@ android:maxLines="1"
     </ScrollView>
 </LinearLayout>
 ```
-**구성 화면**    
+   
+**구성 화면**     
 ![image](https://user-images.githubusercontent.com/84966961/121653188-5eab5c00-cad7-11eb-960a-ecb16b7e47c4.png)   
-
+   
+<br/><br/><br/>
+<hr/>
+   
 3. 첫번째 화면에 대한 기능 구현을 다음과 같이하였다.   
 ```java
 public class MainActivity extends AppCompatActivity {
@@ -272,38 +334,10 @@ public class MainActivity extends AppCompatActivity {
     }
 }
 ```
+   
 **실행 화면**   
 ![image](https://user-images.githubusercontent.com/84966961/121654722-fc535b00-cad8-11eb-9f2c-cea03f440180.png)   
    
  첫번째 파란색 뷰를 터치할시 아래 텍스트 뷰에 각각 좌표와 기능들이 찍히는 것을 알 수 있다.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
