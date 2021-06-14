@@ -183,7 +183,7 @@ android:maxLines="1"
  감지한 이벤트들을 198p의 테이블에 존재하는 다양한 메소드들을 오버라이딩(Override)하여 기능을 추가하는 것이다.
 
 2. SampleEvent 를 작성하여 Event 기능의 예제를 만들어보자.     
- 먼저 디자인을 완성시켰다.
+ 먼저 디자인을 완성시켰다.   
 **activity_main.xml**
 ```
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -230,9 +230,9 @@ android:maxLines="1"
 </LinearLayout>
 ```
 **구성 화면**    
-![image](https://user-images.githubusercontent.com/84966961/121653188-5eab5c00-cad7-11eb-960a-ecb16b7e47c4.png)
+![image](https://user-images.githubusercontent.com/84966961/121653188-5eab5c00-cad7-11eb-960a-ecb16b7e47c4.png)   
 
-3. 첫번째 화면에 대한 기능 구현을 다음과 같이하였다.
+3. 첫번째 화면에 대한 기능 구현을 다음과 같이하였다.   
 ```java
 public class MainActivity extends AppCompatActivity {
 
