@@ -1,5 +1,5 @@
- # Layout2
- Key Word:   
+ # Layout03
+ Key Word: 레이아웃의 종류, 리니어 레이아웃, 상대 레이아웃, 뷰 정렬 속성(gravity, align, ...), margin, padding, weight, ...    
 <hr/>
    
 ### 153p : 02-4 테이블 레이아웃
