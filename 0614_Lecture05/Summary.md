@@ -431,36 +431,26 @@ public class MainActivity extends AppCompatActivity {
     
 <img src="https://user-images.githubusercontent.com/84966961/121860182-91ea2700-cd33-11eb-8897-c60e1aebfc35.png" width="30%"> <img src="https://user-images.githubusercontent.com/84966961/121860198-93b3ea80-cd33-11eb-9519-86b4f3eba844.png" width="30%"> <img src="https://user-images.githubusercontent.com/84966961/121860206-96aedb00-cd33-11eb-83ce-4ed8f85362dc.png" width="30%">    
    
-
- builder.setPositiveButton  : 예 버튼 생성하는 속성.
- builder.setNegativeButton  : 아니오 버튼 생성하는 속성.
- builder.setNeutralButton   : 취소 버튼 생성하는 속성.
-
-
-   <br/><br/>
-<hr/>
+| Builder 속성 | 설명 |
+|---|---|
+| builder.setPositiveButton | 예 버튼 생성하는 속성. |
+| builder.setNegativeButton | 아니오 버튼 생성하는 속성. |
+| builder.setNeutralButton | 취소 버튼 생성하는 속성. |
 
 
 
    <br/><br/>
 <hr/>
 
-
-
-   <br/><br/>
-<hr/>
-
-
+## 개인공부
 
    <br/><br/>
 <hr/>
    
- 5. 진행사항을 저장시켜주는 onSaveInstanceState 콜백 메서드
+ ### 교재 210p : 진행사항을 저장시켜주는 onSaveInstanceState 콜백 메서드
    
  단말의 방향이 바뀌는 기능을 해보았다. 하지만 문제점은 예를들어 사용자가 결제를 하던 도중 방향이 돌아가게 되면 기존까지 모든 액티비티들이 리셋되고 다시 처음부터 실행되어 다시 결제를 시도해야하는 불편함이 생길 수 있다는 점이다. 이런 문제를 해결하기 위하여 액티비티 안에 선언해 두었던 변수 값이 사라지므로 변수의 값을 저장했다가 다시 복원하는 방법이 있어야 한다. 이런 문제를 해결할 수 있도록 onSaveInstanceState 콜백 메서드가 제공된다. 이 메서드는 액티비티가 종료되기 전의 상태를 저장하고, 이 때 저장된 상태를 onCreate() 메서드가 호출 될 때 다시 복원시킬 수 있는 기능을 한다.   
  
-
-
 
 
 
@@ -468,4 +458,3 @@ public class MainActivity extends AppCompatActivity {
 <br/><br/>
 <hr/>
    
-
