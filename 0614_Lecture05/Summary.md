@@ -181,7 +181,9 @@ public class MainActivity extends AppCompatActivity {
 <br/><br/>
 <hr/>
    
- ### 교재 217p : 03-4 토스트, 스낵바 그리고 대화상자 사용하기.   
+ ## 교재 217p : 03-4 토스트, 스낵바 그리고 대화상자 사용하기.   
+    
+  ### 교재 218p : 토스트 위치 바꿔 보여주기   
  
  토스트 메세지 이외에도 스낵바나 대화상자라는 메시지 상자들이 있다.    
  
@@ -303,7 +305,7 @@ public class MainActivity extends AppCompatActivity {
 <br/><br/>
 <hr/>
    
- ### 스낵바(Snackbar) 보여주기.   
+ ### 교재 223p : 스낵바(Snackbar) 보여주기.   
     
   2. 스낵바 만들어보기
    
@@ -321,8 +323,118 @@ public class MainActivity extends AppCompatActivity {
 
 <br/><br/>
 <hr/>
+   
+ ### 교재 224p : 알림 대화상자(Dialog) 보여주기   
+    
+  2. 알림 대화상자(Dialog) 만들어보기   
+   
+ 새로운 프로젝트 SampleDialog 를 생성하여 다음 코드를 작성한다.
 
+**예제 디자인 코드**
+```
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
 
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="버튼을 누르면 대화상자가 뜹니다."
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.212" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="128dp"
+        android:text="띄우기"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintVertical_bias="0.077" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+```
+   
+**예제 기능 코드**
+   
+```java
+public class MainActivity extends AppCompatActivity {
+    TextView textView;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        textView = findViewById(R.id.textView);
+
+        Button button = findViewById(R.id.button);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showMessage();
+            }
+        });
+    }
+
+    private  void showMessage() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);    // 대화상자를 만들기 위한 빌더 객체 생성.
+        builder.setTitle("안내");
+        builder.setMessage("종료하시겠습니까?");
+        builder.setIcon(android.R.drawable.ic_dialog_alert);
+
+        builder.setPositiveButton("예", new DialogInterface.OnClickListener() {  // 예 버튼 추가.
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                String message = "예 버튼이 눌렸습니다.";
+                textView.setText(message);
+            }
+        });
+
+        builder.setNeutralButton("취소", new DialogInterface.OnClickListener() {  // 취소 버튼 추가.
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                String message = "취소 버튼이 눌렸습니다.";
+                textView.setText(message);
+            }
+        });
+
+        builder.setNegativeButton("아니오", new DialogInterface.OnClickListener() {    // 아니오 버튼 추가.
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                String message = "아니오 버튼이 눌렸습니다.";
+                textView.setText(message);
+            }
+        });
+        AlertDialog dialog = builder.create();  // 대화상자 객체 생성 후 보여주기(show).
+        dialog.show();
+    }
+}
+```
+   
+**실행 화면**    
+    
+<img src="https://user-images.githubusercontent.com/84966961/121860077-75e68580-cd33-11eb-939b-48d60a428cd4.png" width="40%"> <img src="https://user-images.githubusercontent.com/84966961/121860094-797a0c80-cd33-11eb-9198-61615e708ea5.png" width="40%">
+
+   
+**예 버튼 클릭시, 아니오 버튼 클릭시, 취소 버튼 클릭시**    
+    
+<img src="https://user-images.githubusercontent.com/84966961/121860182-91ea2700-cd33-11eb-8897-c60e1aebfc35.png" width="30%"> <img src="https://user-images.githubusercontent.com/84966961/121860198-93b3ea80-cd33-11eb-9519-86b4f3eba844.png" width="30%"> <img src="https://user-images.githubusercontent.com/84966961/121860206-96aedb00-cd33-11eb-83ce-4ed8f85362dc.png" width="30%">    
+   
+
+ builder.setPositiveButton  : 예 버튼 생성하는 속성.
+ builder.setNegativeButton  : 아니오 버튼 생성하는 속성.
+ builder.setNeutralButton   : 취소 버튼 생성하는 속성.
 
 
    <br/><br/>
