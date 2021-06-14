@@ -274,7 +274,7 @@ public class MainActivity extends AppCompatActivity {
 
  EditText View에 각각 x값 y값을 넣어보면 다음과 같이 변한다.   
     
-<img src="https://user-images.githubusercontent.com/84966961/121853301-bb06b980-cd2b-11eb-8e07-4d2857974fe3.png" width="40%"> <img src="https://user-images.githubusercontent.com/84966961/121853377-d07be380-cd2b-11eb-8565-918ec33d517c.png" width="40%">
+<img src="(https://user-images.githubusercontent.com/84966961/121853692-310b2080-cd2c-11eb-82b4-3990fdd33377.png)" width="40%"> <img src="https://user-images.githubusercontent.com/84966961/121853377-d07be380-cd2b-11eb-8565-918ec33d517c.png" width="40%">
 
 
 
