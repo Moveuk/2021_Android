@@ -119,7 +119,7 @@ public class MainActivity extends AppCompatActivity {
    
  **GestureDetector의 메소드들** : 교재 198p      
     
-|:메서드:|:이벤트 유형:|
+|메서드|이벤트 유형|
 |---|---|
 | 1. onDown | 화면이 눌렸을 경우 |
 | 2. onShowPress | 화면이 눌렸다 떼어지는 경우 |
