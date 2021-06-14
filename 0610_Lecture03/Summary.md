@@ -1,4 +1,4 @@
- # Layout03
+ # Lecture03 : Layout
  Key Word: 레이아웃의 종류, 리니어 레이아웃, 상대 레이아웃, 뷰 정렬 속성(gravity, align, ...), margin, padding, weight, ...    
 <hr/>
    
