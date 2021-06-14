@@ -1,4 +1,4 @@
-# Lecture01 Hello Android
+# Lecture01 : Hello Android
 Key Word : 안드로이드 스튜디오 설치 및 AVM 설치, 프로젝트 생성.   
    
 <hr/>
