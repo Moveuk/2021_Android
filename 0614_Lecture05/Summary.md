@@ -146,16 +146,39 @@ public class MainActivity extends AppCompatActivity {
    
 ![image](https://user-images.githubusercontent.com/84966961/121847737-03ba7480-cd24-11eb-8368-2ef8f1fd7543.png)   
 ![image](https://user-images.githubusercontent.com/84966961/121847781-1339bd80-cd24-11eb-9cbb-afcb15e865e1.png)    
+
+<br/><br/>
+<hr/>
    
  3. 스마트폰은 폴더 이름을 통해 layout의 방향에 맞는 폴더 내부의 파일을 가져온다. 또한, 방향이 바뀔 때마다 메모리에 있는 액티비티들을 모두 없앴다가 새롭게 로딩을 시킨다.    
  만든 폴더에 `activity_main.xml`을 복사하여 주고 그림과 같이 `hello world!` 텍스트를 가로와 세로 방향에 맞게 정리한다.   
     
 ![image](https://user-images.githubusercontent.com/84966961/121848129-8e02d880-cd24-11eb-9096-17388496793d.png)
 
+<br/><br/>
+<hr/>
+   
  4. 스마트폰의 방향이 바뀔 때 메모리에 있던 액티비티가 사라지고 다시 로딩이 된다는 개념을 잘 기억한 상태로 디바이스를 실행시켜 확인해보도록 하자. 다음 그림처럼 방향을 돌릴 때마다 메모리가 리셋이 되고 수명주기, 생명주기 메서드들이 자동으로 호출되며 showToast 기능이 작동되는 것을 알 수 있다.   
    
  <img src="https://user-images.githubusercontent.com/84966961/121849046-d373d580-cd25-11eb-8c21-4e472f41d54f.png" width="30%"> <img src="https://user-images.githubusercontent.com/84966961/121849058-d66ec600-cd25-11eb-8b9c-1005365cd45b.png" width="65%">
 
+ **%토스트 메시지**   
+ 
+ 토스트 메세지란(Toast Message)?   
+    
+토스트 메세지란 짧은 메세지를 유저에게 노출 시킨 후 일정 시간이 지나면 사라지는 팝업이다. 우리가 앱에서 흔히 볼수 있는 뒤로가기를 눌렀을때 "뒤로가기를 한 번 더 누르면 앱이 종료됩니다."라고 뜨는 팝업이 토스트 메세지 이다.
+
+```java
+    public void showToast(String data) {
+        Toast.makeText(this, data, Toast.LENGTH_LONG).show();
+    }
+```
+   
+ 매개변수로 첫번째 인자는 컨텍스트이며 두번째 인자인 data는 우리가 띄우고 싶은 문구를 의미하고, 세번째 인자인 Toast.LENGTH_LONG은 얼마만큼의 시간동안 보여줄지 즉 노출 시간(short_4초(4000ms)와 long_7초(7000ms) 가량)을 뜻한다. 마지막 메소드 .show()를 통하여 세팅된 토스트 메세지를 출력하게 된다.
+
+<br/><br/>
+<hr/>
+   
  5. 
  6.  
  7.   
