@@ -184,8 +184,10 @@ public class MainActivity extends AppCompatActivity {
  ### 교재 217p : 03-4 토스트, 스낵바 그리고 대화상자 사용하기.   
  
  토스트 메세지 이외에도 스낵바나 대화상자라는 메시지 상자들이 있다.    
+ 
+  1. 토스트 만들어보기
     
-1. SampleToast 프로젝트를 만든후 다음의(교재 218p) 구성을 만들어 보자.
+ SampleToast 프로젝트를 만든후 다음의(교재 218p) 구성을 만들어 보자.
  
  > LinearLayout
  >> EditText
@@ -253,8 +255,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        editText = findViewById(R.id.editText);
-        editText2 = findViewById(R.id.editText2);
+        editText = findViewById(R.id.editText);		// editText의 주소값을 불러와 저장해둠.
+        editText2 = findViewById(R.id.editText2);	// editText2의 주소값을 불러와 저장해둠.
     }
 
     public void onButton1Clicked(View v) {
@@ -294,13 +296,53 @@ public class MainActivity extends AppCompatActivity {
    
 **화면**
 
-<img src="https://user-images.githubusercontent.com/84966961/121854036-995a0200-cd2c-11eb-965e-becdb51dfd3e.png" width="30%">
-<img src="https://user-images.githubusercontent.com/84966961/121854510-39179000-cd2d-11eb-8ab9-b35d28ba7f9e.png" width="30%">
-<img src="https://user-images.githubusercontent.com/84966961/121854527-3d43ad80-cd2d-11eb-9a51-869aa5ce082e.png" width="30%">
+<img src="https://user-images.githubusercontent.com/84966961/121854036-995a0200-cd2c-11eb-965e-becdb51dfd3e.png" width="25%">
+<img src="https://user-images.githubusercontent.com/84966961/121854510-39179000-cd2d-11eb-8ab9-b35d28ba7f9e.png" width="25%">
+<img src="https://user-images.githubusercontent.com/84966961/121854527-3d43ad80-cd2d-11eb-9a51-869aa5ce082e.png" width="25%">
 
 
 
 <br/><br/>
+<hr/>
+   
+ ### 스낵바(Snackbar) 보여주기.   
+    
+  2. 스낵바 만들어보기
+   
+ 스낵바를 띄워보기 위해서 버튼만 하나 추가 후 기능을 위하여 onClick 속성에 `onButton3Clicked`를 넣어주었다. 이 후 자바코드에 다음과 같은 한줄을 넣게 되면 기능이 작동한다.    
+   
+```java
+    public void onButton3Clicked(View v) {
+        Snackbar.make(v,"스낵바입니다.", Snackbar.LENGTH_LONG).show();
+    }
+```
+   
+**실행 화면**   
+![image](https://user-images.githubusercontent.com/84966961/121856225-39b12600-cd2f-11eb-838b-319668b375fe.png)    
+   
+
+<br/><br/>
+<hr/>
+
+
+
+
+   <br/><br/>
+<hr/>
+
+
+
+   <br/><br/>
+<hr/>
+
+
+
+   <br/><br/>
+<hr/>
+
+
+
+   <br/><br/>
 <hr/>
    
  5. 진행사항을 저장시켜주는 onSaveInstanceState 콜백 메서드
@@ -316,15 +358,4 @@ public class MainActivity extends AppCompatActivity {
 <br/><br/>
 <hr/>
    
- 6.  
- 7.   
- 8. ㅁ
- 9. ㅁㅁ
- 10. ㅁ
- 11. ㅁ
- 12. ㅁㅁ
- 13. ㅁ
- 14. ㅁ
- 15. ㅁㅁ
- 16. ㅁ
- 17. 
+
