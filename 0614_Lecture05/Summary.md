@@ -296,9 +296,7 @@ public class MainActivity extends AppCompatActivity {
    
 **화면**
 
-<img src="https://user-images.githubusercontent.com/84966961/121854036-995a0200-cd2c-11eb-965e-becdb51dfd3e.png" width="25%">
-<img src="https://user-images.githubusercontent.com/84966961/121854510-39179000-cd2d-11eb-8ab9-b35d28ba7f9e.png" width="25%">
-<img src="https://user-images.githubusercontent.com/84966961/121854527-3d43ad80-cd2d-11eb-9a51-869aa5ce082e.png" width="25%">
+<img src="https://user-images.githubusercontent.com/84966961/121854036-995a0200-cd2c-11eb-965e-becdb51dfd3e.png" width="30%"> <img src="https://user-images.githubusercontent.com/84966961/121854510-39179000-cd2d-11eb-8ab9-b35d28ba7f9e.png" width="30%"> <img src="https://user-images.githubusercontent.com/84966961/121854527-3d43ad80-cd2d-11eb-9a51-869aa5ce082e.png" width="30%">
 
 
 
