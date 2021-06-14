@@ -108,7 +108,7 @@ android:maxLines="1"
    checkbox : 체크 박스 버튼   
    과 같이 다양한 버튼이 존재함.   
     
- **팔레트 패널에 보이는 다양한 버튼들**
+ **팔레트 패널에 보이는 다양한 버튼들**    
 ![image](https://user-images.githubusercontent.com/84966961/121640858-6d8b1200-cac9-11eb-8eb3-c92bba729774.png)
    
 <br/><br/><br/>
