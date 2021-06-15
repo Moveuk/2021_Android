@@ -239,6 +239,16 @@ public class MainActivity extends AppCompatActivity {
 <img src="https://user-images.githubusercontent.com/84966961/121980630-3bc6c380-cdc7-11eb-8ab7-9f85314b66b0.png" width="40%"> <img src="https://user-images.githubusercontent.com/84966961/121980632-3e291d80-cdc7-11eb-948e-0940cc59b0c9.png" width="40%">
 
 
+### getApplicationContext()에 대한 이야기
+
+ 컨텍스트에 대해서 구글링해보다 나온 자료이다.
+```
+그 어떤 컨텍스트(Context)보다 오래 유지되는 컨텍스트(Context)가 필요할때에만 getApplicationContext()를 사용하십시오.
+```
+   
+ 여기서 `getApplicationContext()`는 this로 바뀔 수 있는데 this보다 오래 유지되려면 `getApplicationContext()` 자체로 사용하라는 것이다. 결국, `getApplicationContext()`는 현재 어플리케이션의 `맥락, 문맥`에서 어떤 정보, 클래스 등등을 찾고자 할 때 쓰이는 것 같다.
+
+
 <br/><br/>
 <hr/>
    
@@ -307,8 +317,8 @@ public class MenuActivity extends AppCompatActivity {
 
  ### 교재 254p : 인텐트  
  1. 인텐트 설명
-
-
+   
+ 내가 이해한 바로는 A 액티비티에서 B 액티비티로 넘어가게 해주는 기능과 그 기능에 붙어있는 패키지(다양한 정보들)를 말한다. 한마디로 폴더나 박스 같은 것.
 
 
 
@@ -504,9 +514,126 @@ public class MenuActivity extends AppCompatActivity {
 
 getIntent 객체를 만들고 이름과 패스워드 변수를 만들어 들어오는 값을 받아주고 들어온 값을 토스트 메세지로 출력해서 MenuActivity에서 받았는지 확인해 보았다.   
     
-**실행 결과**
-<img src="https://user-images.githubusercontent.com/84966961/121997498-6cb5f100-cde5-11eb-81be-7f5abcafb34e.png" width="40%">
+**실행 결과**   
+<img src="https://user-images.githubusercontent.com/84966961/121997498-6cb5f100-cde5-11eb-81be-7f5abcafb34e.png" width="40%">   
 
 <br/><br/>
 <hr/>
    
+### 교재 266p : 직렬화(Parcelable)   
+   
+ 1. SimpleData 클래스 만든후 implements Parcelable 의 구현을 하고 오버라이드 함.
+```java
+public class SimpleData implements Parcelable {
+
+    int number;
+    String message;
+
+    public SimpleData(int num, String msg) {  // 원하는 구조로 생성자 오버로딩 생성.
+        number = num;
+        message = msg;
+    }
+
+    protected SimpleData(Parcel in) {
+        number = in.readInt();
+        message = in.readString();
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeInt(number);
+        dest.writeString(message);
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    public static final Creator<SimpleData> CREATOR = new Creator<SimpleData>() {
+        @Override
+        public SimpleData createFromParcel(Parcel in) {
+            return new SimpleData(in);
+        }
+
+        @Override
+        public SimpleData[] newArray(int size) {
+            return new SimpleData[size];
+        }
+    };
+}
+```
+
+<br/><br/>
+<hr/>
+   
+### 교재 268p : 직렬화(Parcelable)한 데이타 주고 받기
+   
+**MainActivity**
+```java
+public class MainActivity extends AppCompatActivity {
+    public static final int REQUEST_CODE_MENU = 101;
+    public static final String KEY_SIMPLE_DATA = "data";
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        Button button = findViewById(R.id.button);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(),MenuActivity.class);
+                SimpleData data = new SimpleData(100, "Hello Android!");    // SimpleData 객체 생성
+                intent.putExtra(KEY_SIMPLE_DATA, data);                 // 인텐트에 부가 데이터 넣기
+                startActivityForResult(intent, REQUEST_CODE_MENU);
+            }
+        });
+    }
+}
+```
+   
+**MenuActivity**
+```java
+public class MenuActivity extends AppCompatActivity {
+    TextView textView;
+
+    public static final String KEY_SIMPLE_DATA = "data";
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_menu);
+
+        textView = findViewById(R.id.textView);
+        Button button = findViewById(R.id.button2);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.putExtra("name","mike");
+                setResult(RESULT_OK,intent);
+
+                finish();
+            }
+        });
+
+        Intent intent = getIntent();
+        processIntent(intent);
+    }
+
+    private void processIntent(Intent intent) {
+        if (intent != null) {
+            Bundle bundle = intent.getExtras();
+            SimpleData data = bundle.getParcelable(KEY_SIMPLE_DATA);
+            if (intent != null) {
+                textView.setText("전달 받은 데이터\nNumber : "+ data.number + "\nMessage : "+ data.message);
+            }
+        }
+    }
+}
+```
+
+**실행 결과**   
+<img src="https://user-images.githubusercontent.com/84966961/122004036-d7b7f580-cdee-11eb-85d2-c631e18321b1.png" width="40%"> <img src="https://user-images.githubusercontent.com/84966961/122004054-dd154000-cdee-11eb-8c3e-137fb78e3eb2.png" width="40%">  
