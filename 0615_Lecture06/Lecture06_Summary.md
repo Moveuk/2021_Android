@@ -439,12 +439,74 @@ Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://naver.com"));
 <br/><br/>
 <hr/>
    
-### Mission
+### Mission : 다시 main으로 돌아오게 하기.
+   
+ MenuActivity에 버튼 만들고 그냥 간단하게 컴포넌트 만들어서 다시 패키지 이름, 액티비티 이름 넣어서 돌아오게 했음.
+
+```java
+public class MenuActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_menu);
+
+        Button button = findViewById(R.id.button3);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                ComponentName name = new ComponentName("org.techtown.samplecallintent",
+                        "org.techtown.samplecallintent.MainActivity");
+                intent.setComponent(name);  //인텐트 객체에 컴포넌트 지정
+                startActivityForResult(intent, 101);
+            }
+        });
+    }
+}
+```
 
 
+<br/><br/>
+<hr/>
+   
+### Main에서 Menu로 데이터와 함께 넘어가기 : intent.putExtra()
 
 
+```java
+        Button button2 = findViewById(R.id.button2);
+        button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                // 컴포넌트 이름을 지정할 수 있는 객체 생성.
+                ComponentName name = new ComponentName("org.techtown.samplecallintent",
+                        "org.techtown.samplecallintent.MenuActivity");
+                // 첫번째 인자 : 패키지 이름, 두번째 인자 : 클래스 이름
+                intent.putExtra("username","park");
+                intent.putExtra("password","asdf");
+                intent.setComponent(name);  //인텐트 객체에 컴포넌트 지정
+                startActivityForResult(intent, 101);    //액티비티 띄우기
+            }
+        });
+```
 
+ Main에서 클릭시 함께 `intent.putExtra("username","park");  intent.putExtra("password","asdf");` 코드로 정보를 넘겨주었다. 이후 Menu에서 다음과 같은 코드로 받아 변수, 필드에 넣어줄 수 있다.   
+    
+```java
+        Intent receiveIntent = getIntent();
+        String username = receiveIntent.getStringExtra("username");
+        String password = receiveIntent.getStringExtra("password");
+	
+	Toast.makeText(this,"username : "+username+", password : "+password,Toast.LENGTH_LONG).show();
 
+```
 
+getIntent 객체를 만들고 이름과 패스워드 변수를 만들어 들어오는 값을 받아주고 들어온 값을 토스트 메세지로 출력해서 MenuActivity에서 받았는지 확인해 보았다.   
+    
+**실행 결과**
+<img src="https://user-images.githubusercontent.com/84966961/121997498-6cb5f100-cde5-11eb-81be-7f5abcafb34e.png" width="40%">
 
+<br/><br/>
+<hr/>
+   
