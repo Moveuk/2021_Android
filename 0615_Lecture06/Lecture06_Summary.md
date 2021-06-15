@@ -263,11 +263,15 @@ public class MenuActivity extends AppCompatActivity {
    
 **MainActivity.java 코드 추가**
 ```java
+    //돌아오면 자동으로 콜백되어 호출되는 함수 작성.
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         // 첫번째 인자 : 요청 코드(REQUEST_CODE_MENU), 두번째 인자 : 결과코드(Result_OK)  세번째 : intent 정보를 받음.
         // 패키지 형태로 정보다 갔다가 돌아옴.
+//세번째 매개변수에서 메뉴엑티비티에서 보낸 intent를 전달받음
+//리퀘스트코드는 메뉴화면을 띄울떄 전달한 101코드가 메뉴화면으로갓다가 다시 여기로 requestCode로 전달됨.
+//즉 requestCode로 어떤화면으로부터 왔는지 알 수 있음
 
         // menu에서 main으로 돌아올 때 토스트 메세지 .
         if(requestCode == REQUEST_CODE_MENU){   // 내가 정한 코드랑 같으면 토스트로 확인 메시지를 띄워라.
@@ -284,15 +288,95 @@ public class MenuActivity extends AppCompatActivity {
         }
     }
 ```
- `돌아가기` 버튼을 누르면 다시 MainActivity로 돌아가는 것을 확인할 수 있다. 이 후 토스트 메세지가 뜬다
+ `돌아가기` 버튼을 누르면 다시 MainActivity로 돌아가는 것을 확인할 수 있다. 이 후 토스트 메세지가 뜬다.   
+   
+ 주석을 통해 코드를 이해하자. 3번째 인자를 통해 intent를 전달 받고 5번에서 `startActivityForResult(intent, REQUEST_CODE_MENU);` 을 통해 인텐트와 내 객체의 코드를 보내면 intent 내부에 MenuActivity 주소값을 가지고 있기 때문에 액티비티를 받게 되고, 띄우게 된다. 
+
+ 돌아오게 되면 콜백으로 `protected void onActivityResult(int requestCode, int resultCode, Intent data) {`가 자동으로 호출되고 돌아온 패키지 정보를 토대로 if문이 실행되는 구조이다. 그렇기 때문에 name, mike라는 값을 토스트에 띄울 수 있는 것이다.
+
+<br/><br/>
+<hr/>
+   
+ ## 교재 254p : 04-3 인텐트 살펴보기
+
+ ### 교재 254p : 인텐트  
+ 1. 인텐트 설명
+
+
+
+
+
+
+
+ **액션과 데이터를 사용하는 대표적인 예**
+ | 속성 | 설 명 |
+ |---|---|
+ | ACTION_DIAL tel:01077881234 | 주어진 전화번호를 이용해 전화걸기 화면을 보여줌. |
+ | ACTION_VIEW tel:01077881234 | 주어진 전화번호를 이용해 전화걸기 화면을 보여줌. URI 값의 유형에 따라 VIEW 액션이 다른 기능을 수행함. |
+ | ACTION_EDIT content://contackt/preple/2 | 전화번호부 데이터 베이스에 있는 정보 중에서 ID 값이 2인 정보를 편집하기 위한 화면을 보여줌. |
+ | ACTION_VIEW content://contacts/people | 전화번호부 데이터 베이스의 내용을 보여줌. |
+   
+ **256p 인텐트의 생성자들**
+ ```
+[Reference]
+ Intent()
+ Intent(Intent o)
+ Intent(String action[,Uri uri])
+ Intent(Context packageContext, Class<?> cls)
+ Intent(String action,Uri uri, Context packageContext,Class<?> cls)
+```
+<br/><br/>
+<hr/>
+
+### 교재 257p : 디바이스의 기존 인텐트를 이해하기 위한 예제.   
+   
+ 1. 프로젝트 SampleCallIntent 생성 및 디자인
+```
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical">
+
+<!-- 전화번호를 입력할 상자 정의 -->
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="010-1000-1000"
+        android:textSize="24sp"/>
+
+<!-- 전화걸기 버튼 정의 -->
+        <Button
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="전화걸기"/>
+</LinearLayout>
+```
+   
+**구성 화면**
+<img src="https://user-images.githubusercontent.com/84966961/121985494-cc090680-cdcf-11eb-9632-473349f4f912.png" width="50%"
+
+     
+<br/><br/>
+<hr/>
+   
+ 2. 통화 다이얼을 띄우기 위한 기능 구현.
+
+
+
+
 
 
 
 <br/><br/>
 <hr/>
    
-7. 1
-
+ 3.
+ 
 
 
 
@@ -302,4 +386,4 @@ public class MenuActivity extends AppCompatActivity {
 <br/><br/>
 <hr/>
    
-8.
+ 4.
