@@ -1,5 +1,5 @@
 # Lecture06 : 여러 화면 간 전환하기
-Key Word : 
+Key Word : 레이아웃 인플레이션(Inflation) - 부분 화면 구성, [액티비티를 불러오는 방법 : 인텐트(Intent), 컴포넌트(Component)], ACTION_VIEW
 <hr/>
    
 # 04 여러 화면 간 전환하기   
