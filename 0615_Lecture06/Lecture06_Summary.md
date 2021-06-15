@@ -363,8 +363,8 @@ public class MenuActivity extends AppCompatActivity {
 </LinearLayout>
 ```
    
-**구성 화면**
-<img src="https://user-images.githubusercontent.com/84966961/121985494-cc090680-cdcf-11eb-9632-473349f4f912.png" width="50%"
+**구성 화면**   
+<img src="https://user-images.githubusercontent.com/84966961/121985494-cc090680-cdcf-11eb-9632-473349f4f912.png" width="50%">
 
      
 <br/><br/>
@@ -411,15 +411,40 @@ Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://naver.com"));
 <br/><br/>
 <hr/>
    
- 3.
- 
-
-
-
-
-
+ 3. 교재 259p : 액티비티를 컴포넌트 방식으로 실행하기
+    
+ `MenuActivity` 라는 새로운 액티비티를 생성한 후 `MainActivity.java` 파일에 컴포넌트 형태로 생성하여 실행할 수 있는 코드를 작성한다. 또한, 기본 디자인에 버튼을 하나 더 추가하여 id를 button2로 만든다.   
+    
+```java
+        Button button2 = findViewById(R.id.button2);
+        button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                // 컴포넌트 이름을 지정할 수 있는 객체 생성.
+                ComponentName name = new ComponentName("org.techtown.samplecallintent",
+                        "org.techtown.samplecallintent.MenuActivity");
+                // 첫번째 인자 : 패키지 이름, 두번째 인자 : 클래스 이름
+                intent.setComponent(name);  //인텐트 객체에 컴포넌트 지정
+                startActivityForResult(intent, 101);    //액티비티 띄우기
+            }
+        });
+    }
+```
+**실행 화면**   
+<img src="https://user-images.githubusercontent.com/84966961/121988984-4b99d400-cdd6-11eb-9d98-0b19f6d96b03.png" width="40%"> <img src="https://user-images.githubusercontent.com/84966961/121989030-5eaca400-cdd6-11eb-84e5-8bab387fac6b.png" width="40%">   
+   
+ 실행 화면처럼 버튼 클릭시 MenuActivity로 넘어가는 것을 볼 수 있다.
 
 <br/><br/>
 <hr/>
    
- 4.
+### Mission
+
+
+
+
+
+
+
+
