@@ -218,6 +218,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), MenuActivity.class); // 우리가 필요한 정보를 설정하는 객체.
+//응답을 받을 경우는 startActivityForResult를 사용한다.
+//아니면 그냥 StartActivity(intent)라 하면된다.
+//즉 둘다 액티비티를 화면에 띄우고 인텐트를 전달해주는 역할
                 startActivityForResult(intent, REQUEST_CODE_MENU); // 새로운 화면 전환을 startActivity를 이용해서 할 수 있다.
             }
         });
@@ -225,7 +228,8 @@ public class MainActivity extends AppCompatActivity {
 }
 ```
     
-**결과 화면**
+**결과 화면**   
+   
 <img src="https://user-images.githubusercontent.com/84966961/121980630-3bc6c380-cdc7-11eb-8ab7-9f85314b66b0.png" width="40%"> <img src="https://user-images.githubusercontent.com/84966961/121980632-3e291d80-cdc7-11eb-948e-0940cc59b0c9.png" width="40%">
 
 
@@ -247,14 +251,49 @@ public class MenuActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent();
-                intent.putExtra("name","mike"); // 정보를 넘겨줌.
-                setResult(RESULT_OK.intent); // 나를 호출한 객체에게 정보값을 보냄.
-                finish();  // 두개의 액티비티 일 땐 닫으면 다시 돌아감.
+                intent.putExtra("name","mike"); // 정보를 넘겨줌. 인텐트 객체 생성하고 name의 값을 부가 데이터로 넣기
+		// name = "mink"; 개념인듯? 정보를 보내서 저장해둠. main에서 찾아서 토스트 메세지에 넣음.
+                setResult(RESULT_OK, intent); // 나를 호출한 객체에게 정보값을 보냄. 응답 보내기
+                finish();  // 두개의 액티비티 일 땐 닫으면 다시 돌아감. 현재 액티비티 없애기
             }
         });
     }
 }
 ```
+   
+**MainActivity.java 코드 추가**
+```java
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        // 첫번째 인자 : 요청 코드(REQUEST_CODE_MENU), 두번째 인자 : 결과코드(Result_OK)  세번째 : intent 정보를 받음.
+        // 패키지 형태로 정보다 갔다가 돌아옴.
+
+        // menu에서 main으로 돌아올 때 토스트 메세지 .
+        if(requestCode == REQUEST_CODE_MENU){   // 내가 정한 코드랑 같으면 토스트로 확인 메시지를 띄워라.
+            // 내가 보낸 리퀘스트인지 확인할 수 있음.
+            Toast.makeText(getApplicationContext(),
+                    "onActivityResult 메서드 호출됨. 요청 코드 : " + requestCode +
+                    ", 결과 코드 : "+ resultCode, Toast.LENGTH_LONG).show();
+
+            if (resultCode == RESULT_OK) {      // 완료 후 토스트 메세지
+                String name = data.getStringExtra("name");
+                Toast.makeText(getApplicationContext(), "응답으로 전달된 name : " + name,
+                        Toast.LENGTH_LONG).show();
+            }
+        }
+    }
+```
+ `돌아가기` 버튼을 누르면 다시 MainActivity로 돌아가는 것을 확인할 수 있다. 이 후 토스트 메세지가 뜬다
+
+
+
+<br/><br/>
+<hr/>
+   
+7. 1
+
+
 
 
 
@@ -263,3 +302,4 @@ public class MenuActivity extends AppCompatActivity {
 <br/><br/>
 <hr/>
    
+8.
