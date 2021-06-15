@@ -20,5 +20,5 @@ Learning about Android Studio
 5. 20210614 Lecture05   
    이벤트(Event), GestureDetector, 수명 주기, 생명 주기(life cycle), 단말 방향 전환(Orientation), 토스트 메세지(Toast Message), 토스트 창 위치 변환(setGravity), 스낵바(Snackbar), 알림 대화상자(Dialog), 빌더(builder)
 6. 20210615 Lecture06  
-   레이아웃 인플레이션(Inflation) - 부분 화면 구성, [액티비티를 불러오는 방법 : 인텐트(Intent), 컴포넌트(Component)], ACTION_VIEW
+   레이아웃 인플레이션(Inflation) - 부분 화면 구성, [액티비티를 불러오는 방법 : 인텐트(Intent), 컴포넌트(Component)], ACTION_VIEW, intent.putExtra(), getIntent, 직렬화(Parcelable)
 7. 
