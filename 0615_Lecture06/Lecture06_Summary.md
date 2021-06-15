@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
 <hr/>
       
  ### setContentView() 메서드   
-   setContentView() 메서드는 액티비티의 화면 전체(메인 레이아웃)를 설정하는 역할만을 수행한다. 즉, setContentView() 메서드로는 부분 화면(부분 레이아웃)을 메모리에 객체화할 수는 없다. 부분 화면을 메모리에 객체화 하려면 인플레이터를 사용해야 한다. 안드로이드는 이를 위해 시스템 서비스로 LayoutInflater 라는 클래스를 제공한다. 그런데 LayoutInflater 클래스는 시스템 서비스로 제공하는 클래스이브로 다음 getSystemService() 메서드를 이용하여 LayoputInflater 객체를 참조한
+   `setContentView()` 메서드는 액티비티의 화면 전체(메인 레이아웃)를 설정하는 역할만을 수행한다. 즉, `setContentView()` 메서드로는 부분 화면(부분 레이아웃)을 메모리에 객체화할 수는 없다. 부분 화면을 메모리에 객체화 하려면 인플레이터를 사용해야 한다. 안드로이드는 이를 위해 시스템 서비스로 `LayoutInflater` 라는 클래스를 제공한다. 그런데 `LayoutInflater` 클래스는 시스템 서비스로 제공하는 클래스이브로 다음 `getSystemService()` 메서드를 이용하여 `LayoputInflater` 객체를 참조한 후 사용해야한다.
 
 
 <br/><br/>
@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
 <hr/>
    
  2. 전체 액티비티 구성하기   
-	 239p처럼 MenuActivity 라는 새로운 액티비티를 생성한다. (Empty Activity 생성)   
+	239p처럼 MenuActivity 라는 새로운 액티비티를 생성한다. (Empty Activity 생성)   
 ![image](https://user-images.githubusercontent.com/84966961/121975811-79beea00-cdbd-11eb-8f01-e7223a92727a.png)   
    
 <br/><br/>
@@ -73,13 +73,13 @@ public class MainActivity extends AppCompatActivity {
         android:orientation="vertical"/>
 ```
    
- 위의 코드에서 마지막 container라는 id를 가진 LinearLayout이 부분 레이아웃의 부모, 프레임이 될 레이아웃이다.
+ 위의 코드에서 마지막 `container`라는 id를 가진 `LinearLayout`이 부분 레이아웃의 부모, 프레임이 될 레이아웃이다.
 
 <br/><br/>
 <hr/>
    
  4. MainActivity와 MenuActivity 확인 및 불러오는 구조 확인하기.   
-	 app > manifests > AndroidManifest.xml 파일을 보자.    
+	 `app > manifests > AndroidManifest.xml` 파일을 보자.    
 	 다음과 같이 코드를 바꿔주게되면 MenuActivity가 먼저 실행되게 된다.   
     
 **변경 전 코드**   
@@ -156,6 +156,12 @@ public class MenuActivity extends AppCompatActivity {
 <hr/>
    
 ## 교재 246p : 04-2 여러 화면 만들고 화면 간 전환하기   
+   
+ 안드로이드 앱의 네 가지 구성 요소로는 '액티비티(Activity)', '서비스(Service)', '브로드캐스트 수신자(Broadcast Receiver)', '내용 제공자(Content Provider)'가 있다. 어플리케이션을 실행 후 안드로이드 시스템은 앱을 구동하기 위하여 이 네 요소에 대한 정보를 요구한다. 이 정보에 대한 내용이 적혀 있는 파일이 `Manifest.xml`이다. 그렇기 때문에 새 액티비티를 생성하게 되면 `Manifest.xml` 파일에 추가하여 시스템이 인지할 수 있도록 해야한다.   
+   
+ ### 교재 247p : 액티비티를 띄우는 방법.   
+   
+ 액티비티를 소스 코드에서 띄울 때는 startActivity() 메서드를사용하면 된다. 이 메서드는 단순히 액티비티를 띄워 화면에 보이도록 만든다. 하지만 실제로 앱을 만들다 보면 메인 액티비티에서 
    
    forResult	: 화면 전환을 통한 정보처리   
    forActivity	: 일반적인 화면 전환   
@@ -365,12 +371,42 @@ public class MenuActivity extends AppCompatActivity {
 <hr/>
    
  2. 통화 다이얼을 띄우기 위한 기능 구현.
+   
+```java
+public class MainActivity extends AppCompatActivity {
+    EditText editText;
 
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main); // 뷰 객체 참조
 
+        editText = findViewById(R.id.editText);
 
+        Button button = findViewById(R.id.button);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String data = editText.getText().toString();    // 입력상자에 입력된 전화번호 확인
 
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(data));    //전화걸기 화면을 보여줄 인텐트 객체 생성.
+                startActivity(intent); // 액티비티 띄우기
+            }
+        });
+    }
+}
+```
+   
+**실행화면**   
+<img src="https://user-images.githubusercontent.com/84966961/121987081-b6e1a700-cdd2-11eb-83f0-d7498bc898ec.png" width="40%"> <img src="https://user-images.githubusercontent.com/84966961/121987961-7125de00-cdd4-11eb-8562-5e891b443161.png" width="40%">
+   
+**%네이버 띄우기**   
 
-
+ intent 의 data를 웹페이지 주소로 바꿔주면 웹 브라우저가 실행되게 된다. 실제로 우리가 만든 어플리케이션도 넣어주게되면 작동한다.
+```
+Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://naver.com"));
+```
+<img src="https://user-images.githubusercontent.com/84966961/121987968-7420ce80-cdd4-11eb-8639-01f2b7f38330.png" width="40%">
 
 <br/><br/>
 <hr/>
