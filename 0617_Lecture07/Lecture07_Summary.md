@@ -21,49 +21,190 @@ Key Word : 프래그먼트(Fragment)
 
 <br/><br/>
 <hr/>
-## 교재 294p : 프래그먼트 만들어 화면에 추가하기   
    
+## 교재 294p ~ 302p : 프래그먼트 만들어 화면에 추가하기   
+   
+**activity_main.xml**
+```
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/container"
+    tools:context=".MainActivity">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="org.techtown.fragment.MainFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</RelativeLayout>
+```
+   
+**fragment_main.xml**
+   
+```
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainFragment" >
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="메인 프래그먼트"
+        android:textSize="30sp" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="메뉴 화면으로" />
+</LinearLayout>
+```
+   
+**fragment_menu.xml**
+   
+```
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/holo_orange_light"
+    android:orientation="vertical"
+    tools:context=".MainFragment">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="메뉴 프래그먼트"
+        android:textSize="30sp" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="메인 화면으로" />
+</LinearLayout>
+```
+   
+**MainActivity.java**
+   
+```java
+package org.techtown.fragment;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.Bundle;
+
+public class MainActivity extends AppCompatActivity {
+
+    MainFragment mainFragment;
+    MenuFragment menuFragment;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        mainFragment = (MainFragment)getSupportFragmentManager().findFragmentById(R.id.mainFragment);
+        menuFragment = new MenuFragment();
+    }
+
+    public void onFragmentChanged(int idx){
+        if(idx == 0){
+            getSupportFragmentManager().beginTransaction().replace(R.id.container,menuFragment).commit();
+        }else if(idx == 1){
+            getSupportFragmentManager().beginTransaction().replace(R.id.container,mainFragment).commit();
+        }
+    }
+}
+```
+   
+**MainFragment.java**
+   
+```java
+package org.techtown.fragment;
+
+import android.os.Bundle;
+
+import androidx.fragment.app.Fragment;
+
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Button;
+
+public class MainFragment extends Fragment {
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+         ViewGroup rootView =  (ViewGroup)inflater.inflate(R.layout.fragment_main, container, false);
+
+         Button button = rootView.findViewById(R.id.button);
+
+         button.setOnClickListener(new View.OnClickListener() {
+             @Override
+             public void onClick(View v) {
+                 MainActivity activity = (MainActivity)getActivity();
+                 activity.onFragmentChanged(0);
+             }
+         });
+
+         return rootView;
+    }
+}
+```
+   
+**MenuFragment.java**
+   
+```java
+package org.techtown.fragment;
+
+import android.os.Bundle;
+
+import androidx.fragment.app.Fragment;
+
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Button;
 
 
+public class MenuFragment extends Fragment {
 
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        ViewGroup rootView =  (ViewGroup)inflater.inflate(R.layout.fragment_menu, container, false);
 
+        Button button = rootView.findViewById(R.id.button);
 
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                MainActivity activity = (MainActivity)getActivity();
+                activity.onFragmentChanged(1);
+            }
+        });
 
+        return rootView;
+    }
+}
+```
 
 
 
 <br/><br/>
 <hr/>
-## 교재 294p :    
-   
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<br/><br/>
-<hr/>
-## 교재 294p :    
-   
-
-
-
-
-
-
-
-
-
-
-
-
