@@ -134,7 +134,8 @@ public class ViewerFragment extends Fragment {
 
  viewerFragment 에는 이미지 뷰만 존재
 
-**실행 결과**
+**실행 결과**   
+   
 <img src="https://user-images.githubusercontent.com/84966961/122517207-b6534580-d04a-11eb-96e7-c92b0f35576c.png" width="30%"> <img src="https://user-images.githubusercontent.com/84966961/122517241-bf441700-d04a-11eb-9e7b-efedf62e2dc2.png" width="30%"> <img src="https://user-images.githubusercontent.com/84966961/122517259-c2d79e00-d04a-11eb-8ce3-1b5be110f261.png" width="30%">
 
    
