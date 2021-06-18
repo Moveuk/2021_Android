@@ -311,8 +311,8 @@ public class MainActivity extends AppCompatActivity {
             }
 ```
 
-**Logcat 화면**  
-![image](https://user-images.githubusercontent.com/84966961/122531080-1c939480-d05a-11eb-990e-e03090c95b6c.png)
+**Logcat 화면**   
+![image](https://user-images.githubusercontent.com/84966961/122532634-b3148580-d05b-11eb-9ea3-a6fd4ad1bebe.png)
 
 
 
