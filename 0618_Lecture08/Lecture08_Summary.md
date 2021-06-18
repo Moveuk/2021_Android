@@ -278,7 +278,8 @@ public class MainActivity extends AppCompatActivity {
 }
 ```
 
-**결과 화면**
+**결과 화면**   
+   
 ![image](https://user-images.githubusercontent.com/84966961/122530521-82cbe780-d059-11eb-9c8f-1b2685d37455.png)
 
 
