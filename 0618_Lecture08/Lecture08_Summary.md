@@ -280,7 +280,7 @@ public class MainActivity extends AppCompatActivity {
 
 **결과 화면**   
    
-![image](https://user-images.githubusercontent.com/84966961/122530521-82cbe780-d059-11eb-9c8f-1b2685d37455.png)
+![image](https://user-images.githubusercontent.com/84966961/122532838-e1926080-d05b-11eb-865c-ce45f464727b.png)
 
 
 <br/><br/>
@@ -312,7 +312,7 @@ public class MainActivity extends AppCompatActivity {
 ```
 
 **Logcat 화면**   
-![image](https://user-images.githubusercontent.com/84966961/122532634-b3148580-d05b-11eb-9ea3-a6fd4ad1bebe.png)
+![image](https://user-images.githubusercontent.com/84966961/122531080-1c939480-d05a-11eb-990e-e03090c95b6c.png)
 
 
 
