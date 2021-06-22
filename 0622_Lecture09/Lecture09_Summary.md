@@ -1,5 +1,5 @@
 # 하단 Tab & 뷰페이저   
-Key Word :    
+Key Word : 하단 Tab, setOnBottomNavigation, 뷰페이저, adapter, PagerTitleStrip    
 
 <hr/>
    
