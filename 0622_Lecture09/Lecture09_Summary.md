@@ -208,11 +208,14 @@ public class Fragment1 extends Fragment {
    
 **결과 화면**   
    
-![image](https://user-images.githubusercontent.com/84966961/122871770-73ef7880-d36a-11eb-929c-8443adc4b252.png)
+<img src="https://user-images.githubusercontent.com/84966961/122873970-6a1b4480-d36d-11eb-8f42-9f01007e087f.png" width="40%">
 
 
 
-
+   
+<br/><br/>
+<hr/>
+   
 
 
 
