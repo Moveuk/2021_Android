@@ -208,7 +208,7 @@ public class Fragment1 extends Fragment {
    
 **결과 화면**   
    
-<img src="https://user-images.githubusercontent.com/84966961/122873970-6a1b4480-d36d-11eb-8f42-9f01007e087f.png" width="40%">
+<img src="https://user-images.githubusercontent.com/84966961/122874193-aa7ac280-d36d-11eb-90a5-de0991df6478.png" width="40%">
 
 
 
