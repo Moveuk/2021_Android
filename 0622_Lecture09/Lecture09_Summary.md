@@ -368,14 +368,105 @@ public class MainActivity extends AppCompatActivity {
 <img src="https://user-images.githubusercontent.com/84966961/122882145-d9496680-d376-11eb-9ce3-e704d97683c7.gif" width="40%">  
 
 
+<br/><br/>
+<hr/>
 
+### 타이틀 스트립 추가하기     
+   
+ 뷰페이저를 사용하다보면 현재 보고 있는 아이템이 어떤 것인지를 보여줄 필요가 있다. 이럴 때 사용하는 것이 타이틀 스트립이다. `activity_main.xml` 파일에 `<ViewPager>` 태그 안에 `<PaferTitleStrip>` 태그를 넣어 타이틀스트립을 구현해주자.   
+   
+**activity_main.xml**
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity" >
 
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="원하는 뷰로 바로 이동"
+        android:textColor="#000000"
+        android:textSize="20sp" />
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
+        <Button
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="1" />
 
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="2" />
 
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="3" />
+    </LinearLayout>
 
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
+        <androidx.viewpager.widget.PagerTitleStrip
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top"
+            android:background="#55cedf"
+            android:textColor="#FFFFFF"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp">
 
+        </androidx.viewpager.widget.PagerTitleStrip>
+
+    </androidx.viewpager.widget.ViewPager>
+
+</LinearLayout>
+```
+   
+ `activity_main.xml`에서 구현해주었으니 기능을 실행하기 위해서 `getPageTitle()`메소드를 재정의하여 타이틀 스트립을 넣어준다.
+   
+**MainActivity.java**
+```java
+...
+    class  MyPagerAdapter extends FragmentStatePagerAdapter {
+        ArrayList<Fragment> items = new ArrayList<Fragment>();
+        public  MyPagerAdapter(FragmentManager fm) {
+            super(fm);
+        }
+	
+....
+
+        @Nullable				// 추가해준다.
+        @Override
+        public CharSequence getPageTitle(int position) {
+            return "페이지"+(position+1);
+        }
+
+...
+```
+
+**결과 화면**   
+   
+<img src="https://user-images.githubusercontent.com/84966961/122885397-03505800-d37a-11eb-81d7-ce6e569e0b24.gif" width="40%">  
 
 
