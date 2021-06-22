@@ -1,4 +1,4 @@
-# 하단 Tab   
+# 하단 Tab & 뷰페이저   
 Key Word :    
 
 <hr/>
@@ -216,6 +216,157 @@ public class Fragment1 extends Fragment {
 <br/><br/>
 <hr/>
    
+## 교재 335p : 05-5 뷰페이저 만들기   
+    
+ 뷰페이저는 손가락으로 좌우 스크롤하여 넘겨볼 수 있는 기능을 제공한다. 만약 화면 전체를 뷰페이저로 채운다면 좌우 스크롤을 통해 화면을 넘겨볼 수 있게 된다. 화면 일부분만 차지하고 있어도 그 부분에서만 좌우 스크롤이 동작할 것이다. 뷰페이저는 그 안에 프래그먼트를 넣을 수 있고 좌우 스크롤로 프래그먼트를 전환 하게 되는 기능이다. 뷰 페이저는 내부에서 어댑터라는 것과 상호작용하게 되어 있는데 이것은 뷰페이저가 여러 개의 아이템 중에 하나를 보여주는 방식으로 동작하기 때문이다. 어댑터에 대해서는 나중에 리싸이클러뷰를 다룰 때 설명할 것이다. 일단 여기에서는 어댑터를 사용한다고 이해하고 그 안에 코드가 어떻게 들어가는지 유심히 살펴보도록 하자.
+
+![image](https://user-images.githubusercontent.com/84966961/122874455-f9c0f300-d36d-11eb-8b92-7717866ef849.png)
+ 
+<br/><br/>
+<hr/>
+   
+1. fragment1,2,3은 기존에 사용한 파일들을 복사한다.   
+   
+![image](https://user-images.githubusercontent.com/84966961/122876554-9a181700-d370-11eb-9460-fd3fdedd22b7.png)   
+    
+<br/><br/>
+<hr/>
+   
+2. 페이저를 관리하는 어답터 클래스를 만든다.(굳이 내부 클래스로 만드는 이유는 예제이기 때문에 외부에서 쓸 일이 없기 때문이다.)   
+    
+**MainActivity.java**
+```java
+public class MainActivity extends AppCompatActivity {
+    ViewPager pager;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+    }
+	
+    class  MyPagerAdapter extends FragmentStatePagerAdapter {
+        ArrayList<Fragment> items = new ArrayList<Fragment>();
+        public  MyPagerAdapter(FragmentManager fm) {
+            super(fm);
+        }
+
+        public void addItem(Fragment item) {
+            items.add(item);
+        }
+
+        @Override
+        public Fragment getItem(int position) {
+            return items.get(position);
+        }
+
+        @Override
+        public int getCount() {
+            return items.size();
+        }
+    }
+}
+```
+   
+ `MyPagerAdapter` 클래스는 뷰페이저를 관리하는 어답터로 내부에 ArrayList를 만들어 Fragment라는 값들을 받아 관리할 것이다. 또한, addItem, getItem, countItem 등의 메소드를 구현해서 아이템을 추가하고, 아이템을 불러오고, 아이템의 갯수를 셀 수 있는 기능을 넣었다. 아이템은 프래그먼트 뷰를 말한다.
+ 
+<br/><br/>
+<hr/>
+   
+3. 그 다음 이 어답터를 사용할 수 있도록 OnCreate 부분에 코드를 넣어준다.   
+   
+**MainActivity.java**
+```java
+public class MainActivity extends AppCompatActivity {
+    ViewPager pager;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+	
+        pager = findViewById(R.id.pager);
+        pager.setOffscreenPageLimit(3);
+
+        MyPagerAdapter adapter = new MyPagerAdapter(getSupportFragmentManager());
+
+        Fragment1 fragment1 = new Fragment1();
+        adapter.addItem(fragment1);
+
+        Fragment2 fragment2 = new Fragment2();
+        adapter.addItem(fragment2);
+
+        Fragment3 fragment3 = new Fragment3();
+        adapter.addItem(fragment3);
+
+        pager.setAdapter(adapter);
+    }
+	
+    class  MyPagerAdapter extends FragmentStatePagerAdapter {
+        ArrayList<Fragment> items = new ArrayList<Fragment>();
+        public  MyPagerAdapter(FragmentManager fm) {
+            super(fm);
+        }
+
+        public void addItem(Fragment item) {
+            items.add(item);
+        }
+
+        @Override
+        public Fragment getItem(int position) {
+            return items.get(position);
+        }
+
+        @Override
+        public int getCount() {
+            return items.size();
+        }
+    }
+}
+```
+   
+ `MyPagerAdapter` 클래스를 객체화 시킨다. 그 후 각각의 프래그먼트 객체를 만들어주고 adapter 객체에 아이템을 추가해준다. 이 부분에서 각 아이템 객체(프래그먼트)는 아답터 내부의 `ArrayList`에 추가된다는 점을 이해해야 한다. 그 다음 pager에 아답터를 세팅해준다. `pager.setAdapter(adapter);`   
+ 
+<br/><br/>
+<hr/>
+   
+4. 손가락으로 화면을 전환하지 않고, 코드에서 전환시키고 싶다면 뷰페이지 객체의 `setCurruntItem()` 메서드를 사용하면 된다. `MainActivity.java`의 `OnCreate` 부분에 버튼 클릭 리스너를 넣어서 변환하도록 만들어 주자.   
+   
+**MainActivity.java**
+```java
+...
+
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        Button button = findViewById(R.id.button);
+        Button button2 = findViewById(R.id.button2);
+        Button button3 = findViewById(R.id.button3);
+
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                pager.setCurrentItem(0);                // 탭기능과 뷰페이저 기능을 동시에.
+            }
+        });
+	
+...
+```
+   
+**결과 화면**   
+   
+<img src="https://user-images.githubusercontent.com/84966961/122880938-8b802e80-d375-11eb-867a-0ae57990f6e5.gif" width="40%">   
+
+<br/><br/>
+<hr/>
+
+### 각 프래그먼트에 사진 넣어보기   
+   
+**결과 화면**   
+   
+<img src="https://user-images.githubusercontent.com/84966961/122882145-d9496680-d376-11eb-9ce3-e704d97683c7.gif" width="40%">  
+
 
 
 
