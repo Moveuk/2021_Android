@@ -22,10 +22,11 @@ Learning about Android Studio
 6. 20210615 Lecture06  
    레이아웃 인플레이션(Inflation) - 부분 화면 구성, [액티비티를 불러오는 방법 : 인텐트(Intent), 컴포넌트(Component)], ACTION_VIEW, intent.putExtra(), getIntent, 직렬화(Parcelable)
 7. 20210616 Lecture07    
-   내용   
+   프래그먼트(Fragment)   
 8. 20210617 Lecture08    
-   내용    
+   프래그먼트(Fragment), 상하단 탭    
 9. 20210618 Test  
+   버튼 클릭 리스너 구현하기 및 
 10. 20210622 Lecture09   
   하단 Tab, setOnBottomNavigation, 뷰페이저, adapter, PagerTitleStrip   
 11. 20210623 Lecture10
