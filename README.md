@@ -25,6 +25,9 @@ Learning about Android Studio
    내용   
 8. 20210617 Lecture08    
    내용    
-9. 20210622 Lecture09   
+9. 20210618 Test  
+10. 20210622 Lecture09   
   하단 Tab, setOnBottomNavigation, 뷰페이저, adapter, PagerTitleStrip   
-10. 
+11. 20210623 Lecture10
+  바로가기 메뉴, 햄버거 메뉴, NavigationDrawer, FragmentManager
+12. 
