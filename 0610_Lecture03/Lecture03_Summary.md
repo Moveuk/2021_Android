@@ -139,7 +139,7 @@ public class MainActivity extends AppCompatActivity {
     
  스크롤뷰는 추가된 뷰의 영역이 한눈에 다 보이지 않을 때 사용된다. 이때 단순히 스크롤뷰를 추가하고 그 안에 뷰를 넣으면 스크롤이 생기게 된다..
     
- 스크롤 뷰 안에 이미지를 넣고 스크롤이 나타나는지 보기 위해 SampleScrollView를 생성해주고, 다음과 같은 레이아웃 계층을 만들어 주도록 하자.
+ 스크롤 뷰 안에 이미지를 넣고 스크롤이 나타나는지 보기 위해 `SampleScrollView` 새 프로젝트를 생성해주고, 다음과 같은 레이아웃 계층을 만들어 주도록 하자.
  
 ![image](https://user-images.githubusercontent.com/84966961/121474794-8d560380-c9ff-11eb-8943-eb8d0856c9a8.png)
 
