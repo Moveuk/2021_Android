@@ -295,7 +295,7 @@ public interface FragmentCallback {
         app:menu="@menu/activity_main_drawer" />
 </androidx.drawerlayout.widget.DrawerLayout>
 ```
-
+   
 맨처음 시작 고정부분과 `NavigationView의 gravity` 값을 end로 바꿔주면 다음과 같이 이동한다. 이 때 창을 눌렀을 때 꺼지는 기능인 `closeDrawer()`값을 해당 방향에 맞게 변경해줘야 한다.   
    
 ```java
@@ -328,13 +328,15 @@ public interface FragmentCallback {
 
 
    
-**결과화면**
-![image](https://user-images.githubusercontent.com/84966961/123059452-c1d8af00-d444-11eb-8f2b-15f57d56868b.png)
-
+**결과화면**   
+<img src="https://user-images.githubusercontent.com/84966961/123059452-c1d8af00-d444-11eb-8f2b-15f57d56868b.png" width="40%">
+   
+   
  바로가기 버튼으로는 구현 불가능함. 왼쪽으로 막아놨음.
 
 
-
+<br/>
+<hr/>
 
 
 
