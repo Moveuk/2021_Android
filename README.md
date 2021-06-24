@@ -31,4 +31,5 @@ Learning about Android Studio
   하단 Tab, setOnBottomNavigation, 뷰페이저, adapter, PagerTitleStrip   
 11. 20210623 Lecture10
   바로가기 메뉴, 햄버거 메뉴, NavigationDrawer, FragmentManager
-12. 
+12. 20210624 Lecture11
+  350p 도전09
