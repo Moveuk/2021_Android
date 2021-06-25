@@ -33,3 +33,6 @@ Learning about Android Studio
   바로가기 메뉴, 햄버거 메뉴, NavigationDrawer, FragmentManager
 12. 20210624 Lecture11
   350p 도전09
+13. 20210625 Lecture12
+  서비스(Service), 수신자(Broadcast Reveiver)
+14. 
