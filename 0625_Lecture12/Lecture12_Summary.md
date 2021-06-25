@@ -1,5 +1,5 @@
 # Lecture12 서비스와 수신자 이해하기
-Key Word :     
+Key Word : 서비스(Service), 수신자(Broadcast Reveiver)     
 
 <hr/>
    
