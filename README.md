@@ -35,4 +35,6 @@ Learning about Android Studio
   350p 도전09
 13. 20210625 Lecture12
   서비스(Service), 수신자(Broadcast Reveiver)
-14. 
+14. 20210628 Lecture13
+  수신자(Broadcast Reveiver)
+15. 20210628 Lecture14
