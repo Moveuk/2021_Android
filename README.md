@@ -29,12 +29,12 @@ Learning about Android Studio
    버튼 클릭 리스너 구현하기 및 
 10. 20210622 Lecture09   
   하단 Tab, setOnBottomNavigation, 뷰페이저, adapter, PagerTitleStrip   
-11. 20210623 Lecture10
+11. 20210623 Lecture10  
   바로가기 메뉴, 햄버거 메뉴, NavigationDrawer, FragmentManager
-12. 20210624 Lecture11
+12. 20210624 Lecture11  
   350p 도전09
-13. 20210625 Lecture12
+13. 20210625 Lecture12  
   서비스(Service), 수신자(Broadcast Reveiver)
-14. 20210628 Lecture13
+14. 20210628 Lecture13  
   수신자(Broadcast Reveiver)
-15. 20210628 Lecture14
+15. 20210628 Lecture14  
