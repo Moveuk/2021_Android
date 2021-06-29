@@ -37,4 +37,6 @@ Learning about Android Studio
   서비스(Service), 수신자(Broadcast Reveiver)
 14. 20210628 Lecture13  
   수신자(Broadcast Reveiver)
-15. 20210628 Lecture14  
+15. 20210629 Lecture14  
+  카드뷰(CardView), 리사이클러뷰(RecyclerView)
+16. 20210630 Lecture15
