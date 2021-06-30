@@ -40,3 +40,8 @@ Learning about Android Studio
 15. 20210629 Lecture14  
   카드뷰(CardView), 리사이클러뷰(RecyclerView)
 16. 20210630 Lecture15
+  리사이클러뷰(RecyclerView)
+17. 20210701 Lecture16
+
+18. 
+  
