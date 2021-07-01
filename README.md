@@ -42,6 +42,8 @@ Learning about Android Studio
 16. 20210630 Lecture15
   리사이클러뷰(RecyclerView)
 17. 20210701 Lecture16
-
-18. 
+  리사이클러뷰(RecyclerView), 어답터, 토스트 메세지(스윙)
+18. 20210702 Lecture17
+  
+19. 
   
