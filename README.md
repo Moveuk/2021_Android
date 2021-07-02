@@ -38,12 +38,14 @@ Learning about Android Studio
 14. 20210628 Lecture13     
   수신자(Broadcast Reveiver)
 15. 20210629 Lecture14    
-  카드뷰(CardView), 리사이클러뷰(RecyclerView)   
+  카드뷰(CardView), 리사이클러뷰(RecyclerView)     
 16. 20210630 Lecture15   
-  리사이클러뷰(RecyclerView)
+  리사이클러뷰(RecyclerView)    
 17. 20210701 Lecture16   
-  리사이클러뷰(RecyclerView), 어답터, 토스트 메세지(스윙)
+  리사이클러뷰(RecyclerView), 어답터, 토스트 메세지(스윙)    
 18. 20210702 Lecture17   
-  
-19. 
+  애니메이션, Scale, translate, set, rotate, 슬라이딩 애니메이션(slidingAnimation)    
+19. 20210705 Lecture18   
+
+20. 
   
