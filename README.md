@@ -46,6 +46,8 @@ Learning about Android Studio
 18. 20210702 Lecture17   
   애니메이션, Scale, translate, set, rotate, 슬라이딩 애니메이션(slidingAnimation)    
 19. 20210705 Lecture18   
-
-20. 
+  웹뷰, WebViewClient, WebSettings, 인터넷 허용, Permission for Internet, Mission15, page 전환   
+20. 20210706 Lecture19
+  
+21. 20210707 Lecture20
   
