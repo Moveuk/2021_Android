@@ -1,4 +1,4 @@
-# Lecture17 : 앱 화면에 웹브라우저 넣기
+# Lecture18 : 앱 화면에 웹브라우저 넣기
 Key Word : 웹뷰, WebViewClient, WebSettings, 인터넷 허용, Permission for Internet, Mission15, page 전환
 
 <hr/>
