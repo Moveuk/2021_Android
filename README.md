@@ -10,7 +10,6 @@ Learning about Android Studio
 ## < 목차 >
 1. 20210607 Lecture01 : Hello Android~   
   안드로이드 스튜디오 설치 및 AVM 설치, 프로젝트 생성.   
-
 2. 20210608 Lecture02     
   안드로이드 스튜디오 화면 설명(코드창, 디자인창, 블루프린트, 등), 뷰의 개념, 레이아웃의 개념, 제약 조건과 레이아웃    
 3. 20210609 Lecture03    
@@ -47,7 +46,7 @@ Learning about Android Studio
   애니메이션, Scale, translate, set, rotate, 슬라이딩 애니메이션(slidingAnimation)    
 19. 20210705 Lecture18   
   웹뷰, WebViewClient, WebSettings, 인터넷 허용, Permission for Internet, Mission15, page 전환   
-20. 20210706 Lecture19
+20. 20210707 Lecture19   
+  Thread, Handler, Handler.post, Message, Bundle(Key-Value)   
   
-21. 20210707 Lecture20
-  
+## End
