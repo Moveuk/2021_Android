@@ -48,5 +48,7 @@ Learning about Android Studio
   웹뷰, WebViewClient, WebSettings, 인터넷 허용, Permission for Internet, Mission15, page 전환   
 20. 20210707 Lecture19   
   Thread, Handler, Handler.post, Message, Bundle(Key-Value)   
+21. 20210708 Test3  
+  Web View, Stack 활용 간단한 웹뷰 액티비티 만들기   
   
-## End
+...
